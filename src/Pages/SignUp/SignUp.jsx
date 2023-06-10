@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../Shared/SocialLogin";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useForm } from "react-hook-form";
@@ -8,9 +8,11 @@ import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 
 const SignUp = () => {
-	const { createUser } = useAuth();
+	const { createUser, updateUserProfile } = useAuth();
+	const navigate = useNavigate();
 
 	const {
+		reset,
 		register,
 		handleSubmit,
 		formState: { errors },
@@ -33,13 +35,29 @@ const SignUp = () => {
 		createUser(data.email, data.password).then((res) => {
 			const loggedUser = res.user;
 			console.log(loggedUser);
-            Swal.fire({
-				position: "top-center",
-				icon: "success",
-				title: "Sign Up Successful",
-				showConfirmButton: false,
-				timer: 1500,
-			});
+			updateUserProfile(data.name, data.url)
+				.then(() => {
+					console.log("Updated user profile");
+					reset();
+					Swal.fire({
+						position: "top-center",
+						icon: "success",
+						title: "Sign Up Successful",
+						showConfirmButton: false,
+						timer: 1500,
+					});
+					navigate("/");
+				})
+				.catch((err) => {
+					console.log(err);
+					Swal.fire({
+						position: "top-center",
+						icon: "error",
+						title: "Something Went Wrong",
+						showConfirmButton: false,
+						timer: 1500,
+					});
+				});
 		});
 	};
 
@@ -48,7 +66,7 @@ const SignUp = () => {
 			<Helmet>
 				<title>Sports Gear | Sign Up</title>
 			</Helmet>
-			<img className="md:w-1/2" src="https://i.ibb.co/HYJpvz5/login.jpg" alt="" />
+			<img className="md:w-1/2 shadow-2xl" src="https://i.ibb.co/HYJpvz5/login.jpg" alt="" />
 			<div className="md:w-1/2">
 				<form
 					onSubmit={handleSubmit(onSubmit)}

@@ -120,7 +120,7 @@ const NavBar = () => {
 	);
 
 	return (
-		<div className="w-full bg-[#00000080]">
+		<div className="w-full bg-black">
 			<div className="relative flex items-center justify-between my-container px-4 lg:px-8">
 				<Link to="/">
 					<h2 className="text-2xl md:text-[32px] font-black text-white py-[16px] md:py-[32px]">
@@ -128,6 +128,14 @@ const NavBar = () => {
 					</h2>
 				</Link>
 				<ul className="items-center hidden space-x-8 lg:flex">{navItems}</ul>
+				{user && (
+					<img
+						className="h-10 w-10 rounded-full"
+						title={user?.displayName}
+						src={user?.photoURL}
+						alt=""
+					/>
+				)}
 				{/* Mobile Navbar */}
 				<div className="lg:hidden">
 					{/* Dropdown Open Button */}

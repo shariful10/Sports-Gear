@@ -16,7 +16,10 @@ const Login = () => {
 	const from = location.state?.from?.pathname || "/";
 
 	const {
-		register, handleSubmit, formState: { errors }, } = useForm();
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm();
 
 	const onSubmit = (data) => {
 		console.log(data);
@@ -31,6 +34,7 @@ const Login = () => {
 					showConfirmButton: false,
 					timer: 1500,
 				});
+				navigate(from, { replace: true });
 			})
 			.catch((err) => {
 				console.log(err);
@@ -49,7 +53,7 @@ const Login = () => {
 			<Helmet>
 				<title>Sports Gear | Login</title>
 			</Helmet>
-			<img className="md:w-1/2" src="https://i.ibb.co/HYJpvz5/login.jpg" alt="" />
+			<img className="md:w-1/2 shadow-2xl" src="https://i.ibb.co/HYJpvz5/login.jpg" alt="" />
 			<div className="md:w-1/2">
 				<form
 					onSubmit={handleSubmit(onSubmit)}
