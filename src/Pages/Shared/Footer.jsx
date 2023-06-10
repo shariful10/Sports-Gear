@@ -1,15 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
-    const currentYear = new Date().getFullYear();
+	const currentYear = new Date().getFullYear();
 
 	return (
 		<div className="bg-black">
 			<div className="my-container py-[30px] md:py-[50px]">
 				<div className="grid grid-cols-2 lg:grid-cols-4 gap-4 px-6 md:px-0">
 					<div className="">
-						<h3 className="text-2xl text-blue-700 font-cinzel font-bold mb-5">Address</h3>
+						<h3 className="text-2xl text-blue-700 font-cinzel font-bold mb-5">
+							Address
+						</h3>
 						<p className="text-[16px] font-inter text-white">MK Neer, Road- 108,</p>
 						<p className="text-[16px] font-inter text-white">
 							Dhanmondi, Dhaka, Bangladesh
@@ -41,15 +44,20 @@ const Footer = () => {
 						</Link>
 					</div>
 					<div className="">
-						<h3 className="text-2xl text-blue-700 font-cinzel font-bold mb-5">Support</h3>
-						<p className="text-[16px] font-inter text-white hover:text-blue-700">
-							Support Center
+						<h3 className="text-2xl text-blue-700 font-cinzel font-bold mb-5">
+							Contact Us
+						</h3>
+						<p className="text-[16px] font-inter text-white hover:text-blue-700 flex items-center gap-2">
+							<FaPhoneAlt />
+							<span>+880 1354 2568 845</span>
 						</p>
-						<p className="text-[16px] font-inter text-white hover:text-blue-700">
-							Feedback
+						<p className="text-[16px] font-inter text-white hover:text-blue-700 flex items-center gap-2">
+							<FaPhoneAlt />
+							<span>+880 1354 8962 741</span>
 						</p>
-						<p className="text-[16px] font-inter text-white hover:text-blue-700">
-							Accesbility
+						<p className="text-[16px] font-inter text-white hover:text-blue-700 flex items-center gap-2">
+							<FaEnvelope />
+							<span>sportsgear@help.com</span>
 						</p>
 					</div>
 					<div className="">
