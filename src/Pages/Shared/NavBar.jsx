@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import { HiMenuAlt3, HiOutlineX } from "react-icons/hi";
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 const NavBar = () => {
+	const { user, logOut } = useAuth();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const handleLogout = () => {
+		logOut()
+			.then(() => {})
+			.catch((err) => console.log(err));
+	};
 
 	const navItems = (
 		<>
@@ -40,13 +48,21 @@ const NavBar = () => {
 					Sign Up
 				</NavLink>
 			</li>
-			<li>
-				<NavLink
-					to="/login"
-					className={({ isActive }) => (isActive ? "active" : "default")}>
-					Login
-				</NavLink>
-			</li>
+			{user ? (
+				<button
+					onClick={handleLogout}
+					className="text-[16px] tracking-wide text-white transition-colors duration-200 uppercase hover:text-blue-500 font-inter font-semibold">
+					Log Out
+				</button>
+			) : (
+				<li>
+					<NavLink
+						to="/login"
+						className={({ isActive }) => (isActive ? "active" : "default")}>
+						Login
+					</NavLink>
+				</li>
+			)}
 		</>
 	);
 
@@ -87,13 +103,19 @@ const NavBar = () => {
 					Sign Up
 				</NavLink>
 			</li>
-			<li>
-				<NavLink
-					to="/login"
-					className={({ isActive }) => (isActive ? "mobileActive" : "mobileDefault")}>
-					Login
-				</NavLink>
-			</li>
+			{user ? (
+				<button className="text-[16px] tracking-wide text-black transition-colors duration-200 uppercase hover:text-blue-500 font-inter font-semibold">
+					Log Out
+				</button>
+			) : (
+				<li>
+					<NavLink
+						to="/login"
+						className={({ isActive }) => (isActive ? "mobileActive" : "mobileDefault")}>
+						Login
+					</NavLink>
+				</li>
+			)}
 		</>
 	);
 
@@ -123,11 +145,8 @@ const NavBar = () => {
 									<div>
 										<Link to="/" className="lg:hidden">
 											<h2 className="text-2xl font-black text-black">
-												BISTRO BOSS
+												Sports Gear
 											</h2>
-											<h4 className="text-xl font-bold text-black pb-[23px]">
-												RESTUARANT
-											</h4>
 										</Link>
 									</div>
 									{/* Dropdown menu close button */}
