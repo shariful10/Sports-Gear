@@ -21,22 +21,32 @@ const NavBar = () => {
 				</NavLink>
 			</li>
 			<li>
-				<NavLink to="/instructors" className={({ isActive }) => (isActive ? "active" : "default")}>
+				<NavLink
+					to="/instructors"
+					className={({ isActive }) => (isActive ? "active" : "default")}>
 					Instructors
 				</NavLink>
 			</li>
 			<li>
-				<NavLink to="/classes" className={({ isActive }) => (isActive ? "active" : "default")}>
+				<NavLink
+					to="/classes"
+					className={({ isActive }) => (isActive ? "active" : "default")}>
 					Classes
 				</NavLink>
 			</li>
+			{user && (
+				<li>
+					<NavLink
+						to="/dashboard"
+						className={({ isActive }) => (isActive ? "active" : "default")}>
+						Dashboard
+					</NavLink>
+				</li>
+			)}
 			<li>
-				<NavLink to="/dashboard" className={({ isActive }) => (isActive ? "active" : "default")}>
-					Dashboard
-				</NavLink>
-			</li>
-			<li>
-				<NavLink to="/signup" className={({ isActive }) => (isActive ? "active" : "default")}>
+				<NavLink
+					to="/signup"
+					className={({ isActive }) => (isActive ? "active" : "default")}>
 					Sign Up
 				</NavLink>
 			</li>
@@ -48,7 +58,9 @@ const NavBar = () => {
 				</button>
 			) : (
 				<li>
-					<NavLink to="/login" className={({ isActive }) => (isActive ? "active" : "default")}>
+					<NavLink
+						to="/login"
+						className={({ isActive }) => (isActive ? "active" : "default")}>
 						Login
 					</NavLink>
 				</li>
@@ -59,7 +71,9 @@ const NavBar = () => {
 	const mobNavItems = (
 		<>
 			<li>
-				<NavLink to="/" className={({ isActive }) => (isActive ? "active" : "mobileDefault")}>
+				<NavLink
+					to="/"
+					className={({ isActive }) => (isActive ? "active" : "mobileDefault")}>
 					Home
 				</NavLink>
 			</li>
@@ -77,13 +91,15 @@ const NavBar = () => {
 					Classes
 				</NavLink>
 			</li>
-			<li>
-				<NavLink
-					to="/dashboard"
-					className={({ isActive }) => (isActive ? "mobileActive" : "mobileDefault")}>
-					Dashboard
-				</NavLink>
-			</li>
+			{user && (
+				<li>
+					<NavLink
+						to="/dashboard"
+						className={({ isActive }) => (isActive ? "mobileActive" : "mobileDefault")}>
+						Dashboard
+					</NavLink>
+				</li>
+			)}
 			<li>
 				<NavLink
 					to="/signup"
@@ -111,14 +127,16 @@ const NavBar = () => {
 		<div className="w-full bg-black">
 			<div className="relative flex items-center justify-between my-container px-4 lg:px-8">
 				<Link to="/">
-					<h2 className="text-2xl md:text-[32px] font-black py-[16px] md:py-[32px] text-white">
-						Sports Gear
-					</h2>
+					<img
+						className="py-[16px]"
+						src="https://i.ibb.co/BKfVTmQ/sportsgear.png"
+						alt=""
+					/>
 				</Link>
 				<ul className="items-center hidden space-x-8 lg:flex">{navItems}</ul>
 				{user && (
 					<img
-						className="h-10 w-10 rounded-full"
+						className="h-12 w-12 rounded-full"
 						title={user?.displayName}
 						src={user?.photoURL}
 						alt=""
@@ -127,7 +145,10 @@ const NavBar = () => {
 				{/* Mobile Navbar */}
 				<div className="lg:hidden">
 					{/* Dropdown Open Button (Mobile) */}
-					<button aria-label="Open Menu" title="Open Menu" onClick={() => setIsMenuOpen(true)}>
+					<button
+						aria-label="Open Menu"
+						title="Open Menu"
+						onClick={() => setIsMenuOpen(true)}>
 						<HiMenuAlt3 className="h-6 w-6 text-white hover:text-blue-500 focus:text-blue-500" />
 					</button>
 					{isMenuOpen && (
@@ -136,7 +157,9 @@ const NavBar = () => {
 								<div className="flex items-center justify-between mb-4">
 									<div>
 										<Link to="/" className="lg:hidden">
-											<h2 className="text-2xl font-black text-black">Sports Gear</h2>
+											<h2 className="text-2xl font-black text-black">
+												Sports Gear
+											</h2>
 										</Link>
 									</div>
 									{/* Dropdown menu close button (Mobile) */}
