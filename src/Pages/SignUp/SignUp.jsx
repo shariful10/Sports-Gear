@@ -81,7 +81,7 @@ const SignUp = () => {
 							Name
 						</label>
 						<input
-							className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+							className="shadow appearance-none rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-2 focus:border-[3px] border-black focus:border-blue-600"
 							type="name"
 							{...register("name", { required: true })}
 							placeholder="Name"
