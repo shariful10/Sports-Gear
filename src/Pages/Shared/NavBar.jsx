@@ -35,6 +35,13 @@ const NavBar = () => {
 			</li>
 			<li>
 				<NavLink
+					to="/signup"
+					className={({ isActive }) => (isActive ? "active" : "default")}>
+					Sign Up
+				</NavLink>
+			</li>
+			<li>
+				<NavLink
 					to="/login"
 					className={({ isActive }) => (isActive ? "active" : "default")}>
 					Login
@@ -69,14 +76,21 @@ const NavBar = () => {
 			<li>
 				<NavLink
 					to="/dashboard"
-					className={({ isActive }) => (isActive ? "active" : "default")}>
+					className={({ isActive }) => (isActive ? "mobileActive" : "mobileDefault")}>
 					Dashboard
 				</NavLink>
 			</li>
 			<li>
 				<NavLink
+					to="/signup"
+					className={({ isActive }) => (isActive ? "mobileActive" : "mobileDefault")}>
+					Sign Up
+				</NavLink>
+			</li>
+			<li>
+				<NavLink
 					to="/login"
-					className={({ isActive }) => (isActive ? "active" : "default")}>
+					className={({ isActive }) => (isActive ? "mobileActive" : "mobileDefault")}>
 					Login
 				</NavLink>
 			</li>
@@ -85,7 +99,7 @@ const NavBar = () => {
 
 	return (
 		<div className="w-full bg-[#00000080]">
-			<div className="relative flex items-center justify-between max-w-screen-xl mx-auto px-4 lg:px-8">
+			<div className="relative flex items-center justify-between my-container px-4 lg:px-8">
 				<Link to="/">
 					<h2 className="text-2xl md:text-[32px] font-black text-white py-[16px] md:py-[32px]">
 						Sports Gear

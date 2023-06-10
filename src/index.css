@@ -2,18 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+.my-container {
+	@apply container mx-auto;
+}
+
 .active {
-	@apply text-[16px] tracking-wide text-blue-700 transition-colors duration-200 uppercase hover:text-blue-500;
+	@apply text-[16px] tracking-wide text-blue-700 transition-colors duration-200 uppercase hover:text-blue-500 font-inter font-semibold;
 }
 
 .mobileActive {
-	@apply font-bold text-[16px] tracking-wide text-blue-700 transition-colors duration-200 uppercase hover:text-blue-500;
+	@apply font-bold text-[16px] tracking-wide text-blue-700 transition-colors duration-200 uppercase hover:text-blue-500 font-inter;
 }
 
 .default {
-	@apply text-[16px] tracking-wide text-white transition-colors duration-200 hover:text-blue-500 uppercase;
+	@apply text-[16px] tracking-wide text-white transition-colors duration-200 hover:text-blue-500 uppercase font-inter font-semibold;
 }
 
 .mobileDefault {
-	@apply font-bold text-[16px] tracking-wide text-black transition-colors duration-200 hover:text-blue-500 uppercase;
+	@apply font-bold text-[16px] tracking-wide text-black transition-colors duration-200 hover:text-blue-500 uppercase font-inter;
+}
+
+.btn-submit {
+	@apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 w-full rounded font-inter;
 }
