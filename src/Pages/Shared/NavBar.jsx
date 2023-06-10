@@ -53,7 +53,7 @@ const NavBar = () => {
 			{user ? (
 				<button
 					onClick={handleLogout}
-					className="text-[16px] tracking-wide text-white transition-colors duration-200 uppercase hover:text-blue-500 font-inter font-semibold">
+					className="text-[16px] tracking-wide text-white transition-colors duration-200 hover:text-[#F08E00] font-inter font-semibold">
 					Log Out
 				</button>
 			) : (
@@ -108,7 +108,7 @@ const NavBar = () => {
 				</NavLink>
 			</li>
 			{user ? (
-				<button className="text-[16px] tracking-wide text-black transition-colors duration-200 uppercase hover:text-blue-500 font-inter font-semibold">
+				<button className="text-[16px] tracking-wide text-black transition-colors duration-200 hover:text-[#F08E00] font-inter font-semibold">
 					Log Out
 				</button>
 			) : (

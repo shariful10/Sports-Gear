@@ -11,6 +11,12 @@ export default {
 				cinzel: ["Cinzel", "serif"],
 				inter: ["Inter", "sans-serif"],
 			},
+			backgroundImage: {
+				hokey: 'url("https://i.ibb.co/PjCrf7v/hokey.jpg")',
+				cricket: 'url("https://i.ibb.co/X5h2Y1z/cricket.png")',
+				football: 'url("https://i.ibb.co/4j5J58C/football.jpg")',
+				batminton: 'url("https://i.ibb.co/DVQCFd0/batminton.jpg")',
+			},
 		},
 	},
 	plugins: [require("daisyui"), require("flowbite/plugin")],
