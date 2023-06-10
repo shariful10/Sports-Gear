@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import SocialLogin from "../Shared/SocialLogin";
 import { useForm } from "react-hook-form";
@@ -8,14 +8,15 @@ import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 
 const Login = () => {
+	const [showPass, setShowPass] = useState(false);
 	const { signIn } = useAuth();
+	const navigate = useNavigate();
+	const location = useLocation();
+
+	const from = location.state?.from?.pathname || "/";
 
 	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-	} = useForm();
-	const [showPass, setShowPass] = useState(false);
+		register, handleSubmit, formState: { errors }, } = useForm();
 
 	const onSubmit = (data) => {
 		console.log(data);
