@@ -10,3 +10,15 @@
 * Then Create Instructor Page
 * Then Create Classes Page
 * Then Implement Dynamic Title Using React Helmet 
+
+### Used Packages:
+* swiper
+* daisyui
+* firebase
+* flowbite
+* tailwindcss
+* react-icons
+* sweetalert2
+* react-hook-form
+* react-router-dom
+* react-helmet-async
