@@ -6,7 +6,9 @@ const Home = () => {
 	return (
 		<div className="my-container">
 			<Slider />
-            <PopularClasses />
+			<div className="px-4 md:px-0">
+				<PopularClasses />
+			</div>
 		</div>
 	);
 };
