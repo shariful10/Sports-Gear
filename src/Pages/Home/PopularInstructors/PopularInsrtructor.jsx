@@ -5,7 +5,7 @@ const PopularInsrtructor = ({ item }) => {
 
 	return (
 		<div className="card w-full bg-base-100 shadow-xl">
-			<img className="rounded-t-2xl h-[400px]" src={image} alt="Shoes" />
+			<img className="rounded-t-2xl h-[300px] md:h-[400px]" src={image} alt="Shoes" />
 			<div className="card-body">
 				<h2 className="card-title font-inter">Name: {name}</h2>
 				<p className="text-[18px] font-inter">Experience: {experience} Years</p>

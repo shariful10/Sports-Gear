@@ -1,12 +1,16 @@
-import React from 'react';
-import SectionCover from '../../Components/SectionCover';
+import React from "react";
+import SectionCover from "../../Components/SectionCover";
+import { Helmet } from "react-helmet-async";
 
 const Classes = () => {
-    return (
-        <div className='px-4 md:px-0'>
-            <SectionCover heading={'Classes'} />
-        </div>
-    );
+	return (
+		<div>
+			<Helmet>
+				<title>Sports Gear | Classes</title>
+			</Helmet>
+			<SectionCover heading={"Classes"} />
+		</div>
+	);
 };
 
 export default Classes;

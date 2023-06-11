@@ -6,11 +6,11 @@ import "swiper/css/navigation";
 
 const Slider = () => {
 	return (
-		<div className="">
+		<div className=" mt-5 md:mt-[50px]">
 			<Swiper navigation={true} modules={[Navigation]} className="mySwiper">
 				<SwiperSlide>
-					<div className="bg-cricket bg-no-repeat bg-cover bg-center">
-						<div className="bg-[#03030347] text-white md:px-[80px] md:py-[250px] py-[80px] px-6">
+					<div className="bg-cricket bg-no-repeat bg-cover bg-center rounded-2xl">
+						<div className="bg-[#03030347] text-white md:px-[80px] md:py-[250px] py-[80px] px-6 rounded-2xl">
 							<h2 className="text-4xl md:text-[50px] font-cinzel font-bold">
 								Cricket Training
 							</h2>
@@ -25,8 +25,8 @@ const Slider = () => {
 					</div>
 				</SwiperSlide>
 				<SwiperSlide>
-					<div className="bg-football bg-no-repeat bg-cover bg-center text-white">
-						<div className="bg-[#03030347] text-white md:px-[80px] md:py-[250px] py-[80px] px-6">
+					<div className="bg-football bg-no-repeat bg-cover bg-bottom text-white rounded-2xl">
+						<div className="bg-[#03030347] text-white md:px-[80px] md:py-[250px] py-[80px] px-6 rounded-2xl">
 							<h2 className="text-4xl md:text-[50px] font-cinzel font-bold">
 								FootBall Training
 							</h2>
@@ -41,8 +41,8 @@ const Slider = () => {
 					</div>
 				</SwiperSlide>
 				<SwiperSlide>
-					<div className="bg-batminton bg-no-repeat bg-cover bg-center">
-						<div className="bg-[#03030372] text-white md:px-[80px] md:py-[250px] py-[80px] px-6">
+					<div className="bg-batminton bg-no-repeat bg-cover bg-center rounded-2xl">
+						<div className="bg-[#03030372] text-white md:px-[80px] md:py-[250px] py-[80px] px-6 rounded-2xl">
 							<h2 className="text-4xl md:text-[50px] font-cinzel font-bold">
 								Batminton Training
 							</h2>
@@ -57,8 +57,8 @@ const Slider = () => {
 					</div>
 				</SwiperSlide>
 				<SwiperSlide>
-					<div className="bg-hokey bg-no-repeat bg-cover bg-center">
-						<div className="bg-[#03030347] text-white md:px-[80px] md:py-[250px] py-[80px] px-6">
+					<div className="bg-hokey bg-no-repeat bg-cover bg-center rounded-2xl">
+						<div className="bg-[#03030347] text-white md:px-[80px] md:py-[250px] py-[80px] px-6 rounded-2xl">
 							<h2 className="text-4xl md:text-[50px] font-cinzel font-bold">
 								Hokey Training
 							</h2>
