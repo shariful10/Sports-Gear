@@ -1,34 +1,34 @@
 import React, { useEffect, useState } from "react";
 import SectionTitle from "../../../Components/SectionTitle";
-import PopularClass from "./PopularClass";
+import PopularInsrtructor from "./PopularInsrtructor";
 
-const PopularClasses = () => {
-	const [classes, setClasses] = useState([]);
+const PopularInstructors = () => {
+	const [instructors, setInstructors] = useState([]);
 
 	useEffect(() => {
-		fetch("classes.json")
+		fetch("instructors.json")
 			.then((res) => res.json())
 			.then((data) => {
-				const popularClass = data.filter((item) => item.category === "popular");
-				setClasses(popularClass);
+				const popularInstructors = data.filter((item) => item.category === "popular");
+				setInstructors(popularInstructors);
 			});
 	}, []);
 
 	return (
 		<section>
 			<SectionTitle
-				heading={"Popular Classes"}
+				heading={"Popular Instructors"}
 				subheading={
 					"Unlock greatness at our sports training center. Our popular classes offer strength, speed, and sport-specific training. Expert instructors. Personalized attention. Elevate your game. Join us now."
 				}
 			/>
 			<div className="grid md:grid-cols-2 gap-6">
-				{classes.slice(0, 6).map((item) => (
-					<PopularClass key={item._id} item={item} />
+				{instructors.slice(0, 6).map((item) => (
+					<PopularInsrtructor key={item._id} item={item} />
 				))}
 			</div>
 		</section>
 	);
 };
 
-export default PopularClasses;
+export default PopularInstructors;
