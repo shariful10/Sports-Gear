@@ -1,7 +1,7 @@
 import React from "react";
 import { FaGoogle } from "react-icons/fa";
-import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
+import useAuth from "../../Hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const SocialLogin = () => {

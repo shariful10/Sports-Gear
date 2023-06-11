@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import NavBar from "../Pages/Shared/NavBar";
-import Footer from "../Pages/Shared/Footer";
+import { Footer } from "flowbite-react";
 
 const Main = () => {
 	return (

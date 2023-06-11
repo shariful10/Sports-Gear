@@ -1,0 +1,134 @@
+[
+	{
+		"_id": 1,
+		"img": "https://i.ibb.co/sFJbfT7/cric.jpg",
+		"name": "Cricket",
+		"category": "popular",
+		"desc": "Enhance your cricket skills with expert coaching and specialized training.",
+		"students": 25,
+		"ins_name": "John Smith",
+		"price": 50,
+		"seats": 15
+	},
+	{
+		"_id": 2,
+		"img": "https://i.ibb.co/FXYzxsz/football.jpg",
+		"name": "Football",
+		"category": "popular",
+		"desc": "Improve your football technique and tactics under the gu_idance of experienced coaches.",
+		"students": 30,
+		"ins_name": "Sarah Johnson",
+		"price": 60,
+		"seats": 10
+	},
+	{
+		"_id": 3,
+		"img": "https://i.ibb.co/5rwSBmW/badminton.jpg",
+		"name": "Badminton",
+		"category": "general",
+		"desc": "Learn the fundamentals of badminton and refine your skills in a friendly and supportive environment.",
+		"students": 20,
+		"ins_name": "Michael Anderson",
+		"price": 40,
+		"seats": 0
+	},
+	{
+		"_id": 4,
+		"img": "https://i.ibb.co/yNRTdrz/swim.jpg",
+		"name": "Swimming",
+		"category": "general",
+		"desc": "Dive into the world of swimming and improve your technique with professional gu_idance.",
+		"students": 15,
+		"ins_name": "Emily Thompson",
+		"price": 45,
+		"seats": 10
+	},
+	{
+		"_id": 5,
+		"img": "https://i.ibb.co/cXnWTrn/tanis.jpg",
+		"name": "Tennis",
+		"category": "popular",
+		"desc": "Master the art of tennis with skilled coaches and state-of-the-art facilities.",
+		"students": 18,
+		"ins_name": "Dav_id Wilson",
+		"price": 55,
+		"seats": 12
+	},
+	{
+		"_id": 6,
+		"img": "https://i.ibb.co/H781CwT/basketball.jpg",
+		"name": "Basketball",
+		"category": "popular",
+		"desc": "Immerse yourself in the world of basketball and develop your skills with top-notch training.",
+		"students": 28,
+		"ins_name": "Jessica Parker",
+		"price": 65,
+		"seats": 0
+	},
+	{
+		"_id": 7,
+		"img": "https://i.ibb.co/DtM0V0J/hokey.jpg",
+		"name": "Hokey",
+		"category": "general",
+		"desc": "Learn the intricacies of golf and refine your swing with expert gu_idance on the green.",
+		"students": 12,
+		"ins_name": "Andrew Johnson",
+		"price": 75,
+		"seats": 6
+	},
+	{
+		"_id": 8,
+		"img": "https://i.ibb.co/CPjhF3S/volleyball.jpg",
+		"name": "Volleyball",
+		"category": "popular",
+		"desc": "Immerse yourself in the discipline of martial arts and gain self-defense skills with dedicated instructors.",
+		"students": 22,
+		"ins_name": "Michelle Lee",
+		"price": 70,
+		"seats": 10
+	},
+	{
+		"_id": 9,
+		"img": "https://i.ibb.co/MCZQ7WN/swinning.webp",
+		"name": "Swinning",
+		"category": "general",
+		"desc": "Find your balance and inner peace through the practice of yoga with experienced instructors.",
+		"students": 15,
+		"ins_name": "Alexandra Davis",
+		"price": 30,
+		"seats": 5
+	},
+	{
+		"_id": 10,
+		"img": "https://i.ibb.co/W26vfHD/kabadi.jpg",
+		"name": "Kabadi",
+		"category": "popular",
+		"desc": "Boost your athletic performance with rigorous conditioning workouts led by expert trainers.",
+		"students": 20,
+		"ins_name": "Daniel Evans",
+		"price": 55,
+		"seats": 10
+	},
+	{
+		"_id": 11,
+		"img": "https://i.ibb.co/Brp2Yry/volleyball2.jpg",
+		"name": "Volleyball",
+		"category": "popular",
+		"desc": "Spike, block, and serve your way to success in the thrilling sport of volleyball.",
+		"students": 25,
+		"ins_name": "Olivia Roberts",
+		"price": 60,
+		"seats": 15
+	},
+	{
+		"_id": 12,
+		"img": "https://i.ibb.co/ZB4kTpb/cycling.jpg",
+		"name": "Cycling",
+		"category": "general",
+		"desc": "Hit the road or trails with cycling classes that improve endurance and push your limits.",
+		"students": 10,
+		"ins_name": "Mark Thompson",
+		"price": 40,
+		"seats": 5
+	}
+]

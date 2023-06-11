@@ -11,7 +11,9 @@ const Slider = () => {
 				<SwiperSlide>
 					<div className="bg-cricket bg-no-repeat bg-cover bg-center">
 						<div className="bg-[#03030347] text-white md:px-[80px] md:py-[200px] py-[80px] px-6">
-							<h2 className="text-4xl md:text-[50px] font-cinzel font-bold">Cricket Training</h2>
+							<h2 className="text-4xl md:text-[50px] font-cinzel font-bold">
+								Cricket Training
+							</h2>
 							<p className="text-[16px] font-inter md:w-1/2 my-5">
 								Sports Gear Cricket Coaching Center: Elevate your game with expert
 								coaching, state-of-the-art facilities, and a passion for football.
@@ -25,7 +27,9 @@ const Slider = () => {
 				<SwiperSlide>
 					<div className="bg-football bg-no-repeat bg-cover bg-center text-white">
 						<div className="bg-[#03030347] text-white md:px-[80px] md:py-[200px] py-[80px] px-6">
-							<h2 className="text-4xl md:text-[50px] font-cinzel font-bold">FootBall Training</h2>
+							<h2 className="text-4xl md:text-[50px] font-cinzel font-bold">
+								FootBall Training
+							</h2>
 							<p className="text-[16px] font-inter md:w-1/2 my-5">
 								Sports Gear Football Coaching Center: Elevate your game with expert
 								coaching, state-of-the-art facilities, and a passion for football.
@@ -55,7 +59,9 @@ const Slider = () => {
 				<SwiperSlide>
 					<div className="bg-hokey bg-no-repeat bg-cover bg-center">
 						<div className="bg-[#03030347] text-white md:px-[80px] md:py-[200px] py-[80px] px-6">
-							<h2 className="text-4xl md:text-[50px] font-cinzel font-bold">Hokey Training</h2>
+							<h2 className="text-4xl md:text-[50px] font-cinzel font-bold">
+								Hokey Training
+							</h2>
 							<p className="text-[16px] font-inter md:w-1/2 my-5">
 								Sports Gear Hokey Coaching Center: Elevate your game with expert
 								coaching, state-of-the-art facilities, and a passion for football.
