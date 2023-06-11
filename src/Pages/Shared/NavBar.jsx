@@ -22,7 +22,7 @@ const NavBar = () => {
 			</li>
 			<li>
 				<NavLink
-					to="/instructors"
+					to="/instructor"
 					className={({ isActive }) => (isActive ? "active" : "default")}>
 					Instructors
 				</NavLink>
@@ -79,9 +79,9 @@ const NavBar = () => {
 			</li>
 			<li>
 				<NavLink
-					to="/instructors"
+					to="/instructor"
 					className={({ isActive }) => (isActive ? "mobileActive" : "mobileDefault")}>
-					Instructors
+					Instructor
 				</NavLink>
 			</li>
 			<li>
@@ -128,7 +128,7 @@ const NavBar = () => {
 			<div className="relative flex items-center justify-between my-container px-4 lg:px-8">
 				<Link to="/">
 					<img
-						className="py-[16px]"
+						className="py-[16px] w-full"
 						src="https://i.ibb.co/BKfVTmQ/sportsgear.png"
 						alt=""
 					/>

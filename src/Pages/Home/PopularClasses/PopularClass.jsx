@@ -11,9 +11,9 @@ const PopularClass = ({ item }) => {
 			/>
 			<div className="card-body">
 				<h2 className="card-title font-inter">Name of Class: {name}</h2>
-				<h3 className="text-xl font-inter">Price: ${price}</h3>
-				<p className="text-xl font-inter">Number of Students: {students}</p>
-				<p className="text-xl font-inter">{desc}</p>
+				<h3 className="text-[18px] font-inter">Price: ${price}</h3>
+				<p className="text-[18px] font-inter">Number of Students: {students}</p>
+				<p className="text-[18px] font-inter">{desc}</p>
 				<div className="card-actions justify-end">
 					<button className="btn-error font-inter">Select</button>
 				</div>

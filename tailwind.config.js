@@ -16,6 +16,7 @@ export default {
 				cricket: 'url("https://i.ibb.co/X5h2Y1z/cricket.png")',
 				football: 'url("https://i.ibb.co/4j5J58C/football.jpg")',
 				batminton: 'url("https://i.ibb.co/DVQCFd0/batminton.jpg")',
+				topBanner: 'url("https://i.ibb.co/821yTdN/sectionbg.jpg")',
 			},
 		},
 	},
