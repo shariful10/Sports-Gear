@@ -1,7 +1,7 @@
 import React from "react";
 
 const InstructorCard = ({ instructor }) => {
-	const { image, name, email, Classes_number, classes_taken, total_students } = instructor;
+	const { image, name, email } = instructor;
 
 	return (
 		<div className="card w-full bg-base-100 shadow-xl">
