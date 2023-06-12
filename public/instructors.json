@@ -6,7 +6,7 @@
 		"email": "johnsmith@example.com",
 		"category": "popular",
 		"Classes_number": 3,
-		"classes_taken": "Cricket, Baseball, Hockey",
+		"classes_taken": "Bating, Fielding, Fitness",
 		"total_students": 125,
 		"experience": 10
 	},
@@ -17,7 +17,7 @@
 		"email": "janedoe@example.com",
 		"category": "general",
 		"Classes_number": 2,
-		"classes_taken": "Basketball, Tennis",
+		"classes_taken": "Fielding, Wiket-keeping",
 		"total_students": 40,
 		"experience": 12
 	},
@@ -27,8 +27,8 @@
 		"name": "Robert Johnson",
 		"email": "robertjohnson@example.com",
 		"category": "popular",
-		"Classes_number": 4,
-		"classes_taken": "Football, Volleyball, Badminton, Swimming",
+		"Classes_number": 2,
+		"classes_taken": "Spin Bowling, Fielding",
 		"total_students": 150,
 		"experience": 7
 	},
@@ -39,7 +39,7 @@
 		"email": "emilywilson@example.com",
 		"category": "general",
 		"Classes_number": 2,
-		"classes_taken": "Gymnastics, Badminton",
+		"classes_taken": "Fast Bowling, Bating",
 		"total_students": 30,
 		"experience": 11
 	},
@@ -50,7 +50,7 @@
 		"email": "michaelthompson@example.com",
 		"category": "popular",
 		"Classes_number": 2,
-		"classes_taken": "Badminton, Swimming",
+		"classes_taken": "Bating, Leg Spin",
 		"total_students": 90,
 		"experience": 18
 	},
@@ -61,7 +61,7 @@
 		"email": "sarahanderson@example.com",
 		"category": "general",
 		"Classes_number": 3,
-		"classes_taken": "Volleyball, Football, Badminton",
+		"classes_taken": "Catching, Fielding, Spin Bowling",
 		"total_students": 90,
 		"experience": 13
 	},
@@ -72,7 +72,7 @@
 		"email": "davidlee@example.com",
 		"category": "popular",
 		"Classes_number": 2,
-		"classes_taken": "Badminton, Swimming",
+		"classes_taken": "Leg Spin, Catching",
 		"total_students": 120,
 		"experience": 14
 	},
@@ -83,7 +83,7 @@
 		"email": "oliviagarcia@example.com",
 		"category": "general",
 		"Classes_number": 2,
-		"classes_taken": "Baseball, Football",
+		"classes_taken": "Fielding, Catching",
 		"total_students": 40,
 		"experience": 8
 	},
@@ -94,7 +94,7 @@
 		"email": "williamrodriguez@example.com",
 		"category": "popular",
 		"Classes_number": 3,
-		"classes_taken": "Basketball, Football, Volleyball",
+		"classes_taken": "Leg Spin, Wiket-keeping, Catching",
 		"total_students": 180,
 		"experience": 16
 	},
@@ -105,7 +105,7 @@
 		"email": "sophiamartinez@example.com",
 		"category": "general",
 		"Classes_number": 2,
-		"classes_taken": "Tennis, Golf",
+		"classes_taken": "Fielding, Bating",
 		"total_students": 65,
 		"experience": 12
 	},
@@ -116,7 +116,7 @@
 		"email": "jamesdavis@example.com",
 		"category": "popular",
 		"Classes_number": 3,
-		"classes_taken": "Swimming, Running, Tennis",
+		"classes_taken": "Bating, Fitness, Fielding",
 		"total_students": 110,
 		"experience": 9
 	},
@@ -127,7 +127,7 @@
 		"email": "avajohnson@example.com",
 		"category": "general",
 		"Classes_number": 2,
-		"classes_taken": "Tennis, Badminton",
+		"classes_taken": "Fitness, Bating",
 		"total_students": 25,
 		"experience": 10
 	}

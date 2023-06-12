@@ -1,7 +1,7 @@
 import React from "react";
 
 const PopularInsrtructor = ({ item }) => {
-    const {image, name, experience, total_students} = item;
+    const {image, name, total_students} = item;
 
 	return (
 		<div className="card w-full bg-base-100 shadow-xl">

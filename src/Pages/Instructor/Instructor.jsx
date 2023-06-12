@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import SectionCover from "../../Components/SectionCover";
 import InstructorCard from "./InstructorCard";
 import { Helmet } from "react-helmet-async";
+import useInstructors from "../../Hooks/useInstructors";
 
 const Instructor = () => {
-	const [instructors, setInstructors] = useState([]);
-
-	useEffect(() => {
-		fetch("instructors.json")
-			.then((res) => res.json())
-			.then((data) => setInstructors(data));
-	}, []);
+	const [instructors] = useInstructors();
 
 	return (
 		<div>
