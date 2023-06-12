@@ -14,9 +14,10 @@ export default {
 			backgroundImage: {
 				hokey: 'url("https://i.ibb.co/PjCrf7v/hokey.jpg")',
 				cricket: 'url("https://i.ibb.co/X5h2Y1z/cricket.png")',
-				football: 'url("https://i.ibb.co/4j5J58C/football.jpg")',
-				batminton: 'url("https://i.ibb.co/DVQCFd0/batminton.jpg")',
-				topBanner: 'url("https://i.ibb.co/821yTdN/sectionbg.jpg")',
+				bowling: 'url("https://i.ibb.co/YtLXxBx/off-spin.jpg")',
+				fielding: 'url("https://i.ibb.co/mXcFwMq/fielding.jpg")',
+				women: 'url("https://i.ibb.co/MNk8m42/wemen-cricket.jpg")',
+				topBanner: 'url("https://i.ibb.co/WFmrqPG/sectionbg.jpg")',
 			},
 		},
 	},

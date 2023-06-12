@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { HiMenuAlt3, HiOutlineX } from "react-icons/hi";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
+import useTheme from "../../Hooks/useTheme";
 
 const NavBar = () => {
 	const { user, logOut } = useAuth();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const { isDarkMode, handleDarkMode } = useTheme();
 
 	const handleLogout = () => {
 		logOut()
@@ -53,7 +56,7 @@ const NavBar = () => {
 			{user ? (
 				<button
 					onClick={handleLogout}
-					className="text-[16px] tracking-wide text-white transition-colors duration-200 hover:text-[#F08E00] font-inter font-semibold">
+					className="text-[16px] tracking-wide text-white transition-colors duration-200 hover:text-blue-500 font-inter font-semibold">
 					Log Out
 				</button>
 			) : (
@@ -108,7 +111,7 @@ const NavBar = () => {
 				</NavLink>
 			</li>
 			{user ? (
-				<button className="text-[16px] tracking-wide text-black transition-colors duration-200 hover:text-[#F08E00] font-inter font-semibold">
+				<button className="text-[16px] tracking-wide text-[#F08E00] transition-colors duration-200 hover:text-blue-500 font-inter font-semibold">
 					Log Out
 				</button>
 			) : (
@@ -124,24 +127,37 @@ const NavBar = () => {
 	);
 
 	return (
-		<div className="w-full bg-black">
-			<div className="relative flex items-center justify-between my-container px-4 lg:px-8">
+		<div className={`w-full sticky top-0 z-50 ${isDarkMode ? "bg-black" : "bg-gray-500"}`}>
+			<div className="relative flex items-center justify-between my-container px-5 md:px-0">
 				<Link to="/">
 					<img
-						className="py-[16px] w-full"
+						className="py-[16px] w-5/6 md:w-full"
 						src="https://i.ibb.co/BKfVTmQ/sportsgear.png"
 						alt=""
 					/>
 				</Link>
 				<ul className="items-center hidden space-x-8 lg:flex">{navItems}</ul>
-				{user && (
-					<img
-						className="h-12 w-12 rounded-full"
-						title={user?.displayName}
-						src={user?.photoURL}
-						alt=""
-					/>
-				)}
+				<div className="flex items-center gap-4 mr-24 md:mr-0">
+					{user && (
+						<img
+							className="h-12 w-12 rounded-full"
+							title={user?.displayName}
+							src={user?.photoURL}
+							alt=""
+						/>
+					)}
+					<button
+						onClick={handleDarkMode}
+						className={`${
+							isDarkMode ? "p-3 rounded-full bg-white" : "p-3 rounded-full bg-black"
+						}`}>
+						{!isDarkMode ? (
+							<BsFillMoonStarsFill className="h-6 w-6 text-white" />
+						) : (
+							<BsFillSunFill className="h-6 w-6 text-black" />
+						)}
+					</button>
+				</div>
 				{/* Mobile Navbar */}
 				<div className="lg:hidden">
 					{/* Dropdown Open Button (Mobile) */}
@@ -149,17 +165,19 @@ const NavBar = () => {
 						aria-label="Open Menu"
 						title="Open Menu"
 						onClick={() => setIsMenuOpen(true)}>
-						<HiMenuAlt3 className="h-6 w-6 text-white hover:text-blue-500 focus:text-blue-500" />
+						<HiMenuAlt3 className="h-6 w-6 text-[#f8a831] hover:text-blue-500 focus:text-blue-500" />
 					</button>
 					{isMenuOpen && (
 						<div className="absolute top-0 left-0 w-full z-10">
-							<div className="p-4 bg-white border rounded shadow-sm">
+							<div className={`p-4 border rounded shadow-sm ${isDarkMode?'bg-black border-black': 'bg-gray-500 border-gray-500'}`}>
 								<div className="flex items-center justify-between mb-4">
 									<div>
-										<Link to="/" className="lg:hidden">
-											<h2 className="text-2xl font-black text-black">
-												Sports Gear
-											</h2>
+										<Link to="/">
+											<img
+												className="py-[10px] w-4/6 md:w-full"
+												src="https://i.ibb.co/BKfVTmQ/sportsgear.png"
+												alt=""
+											/>
 										</Link>
 									</div>
 									{/* Dropdown menu close button (Mobile) */}
@@ -167,8 +185,9 @@ const NavBar = () => {
 										<button
 											aria-label="Close Menu"
 											title="Close Menu"
+											className=""
 											onClick={() => setIsMenuOpen(false)}>
-											<HiOutlineX className="h-6 w-6 text-black hover:text-blue-500 focus:text-blue-500" />
+											<HiOutlineX className="h-6 w-6 text-[#f8a831] hover:text-blue-500 focus:text-blue-500" />
 										</button>
 									</div>
 								</div>

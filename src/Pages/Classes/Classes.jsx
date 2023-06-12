@@ -8,7 +8,7 @@ const Classes = () => {
 	const [classes] = useClasses();
 
 	return (
-		<div>
+		<div className="contaier mx-auto">
 			<Helmet>
 				<title>Sports Gear | Classes</title>
 			</Helmet>

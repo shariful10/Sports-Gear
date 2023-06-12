@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import useTheme from "../../Hooks/useTheme";
 
 const Footer = () => {
 	const currentYear = new Date().getFullYear();
+	const { isDarkMode } = useTheme();
 
 	return (
-		<div className="bg-black">
+		<div className={`${isDarkMode ? 'bg-black' : 'bg-gray-500'}`}>
 			<div className="my-container py-[30px] md:py-[50px]">
 				<div className="grid grid-cols-2 lg:grid-cols-4 gap-4 px-6 md:px-0">
 					<div className="">

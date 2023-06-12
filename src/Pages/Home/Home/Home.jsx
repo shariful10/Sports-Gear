@@ -3,18 +3,19 @@ import Slider from "../Slider/Slider";
 import PopularClasses from "../PopularClasses/PopularClasses";
 import PopularInstructors from "../PopularInstructors/PopularInstructors";
 import { Helmet } from "react-helmet-async";
+import useTheme from "../../../Hooks/useTheme";
 
 const Home = () => {
+	// const { isDarkMode } = useTheme();
+
 	return (
-		<div className="">
+		<div>
 			<Helmet>
 				<title>Sports Gear | Home</title>
 			</Helmet>
 			<Slider />
-			<div className="">
-				<PopularClasses />
-                <PopularInstructors />
-			</div>
+			<PopularClasses />
+			<PopularInstructors />
 		</div>
 	);
 };

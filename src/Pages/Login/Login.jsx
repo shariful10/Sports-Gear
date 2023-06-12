@@ -6,12 +6,14 @@ import { Helmet } from "react-helmet-async";
 import useAuth from "../../Hooks/useAuth";
 import SocialLogin from "../Shared/SocialLogin";
 import Swal from "sweetalert2";
+import useTheme from "../../Hooks/useTheme";
 
 const Login = () => {
 	const [showPass, setShowPass] = useState(false);
 	const { signIn } = useAuth();
 	const navigate = useNavigate();
 	const location = useLocation();
+	const { isDarkMode } = useTheme();
 
 	const from = location.state?.from?.pathname || "/";
 
@@ -49,20 +51,25 @@ const Login = () => {
 	};
 
 	return (
-		<div className="my-container md:flex justify-center items-center gap-6 my-[50px] md:my-[80px]">
+		<div className="my-container md:flex justify-center items-center gap-6 py-[50px] md:py-[80px]">
 			<Helmet>
 				<title>Sports Gear | Login</title>
 			</Helmet>
 			<img className="md:w-1/2 shadow-2xl" src="https://i.ibb.co/HYJpvz5/login.jpg" alt="" />
 			<div className="md:w-1/2">
-				<div className="bg-white shadow-2xl rounded p-[50px] mb-4">
+				<div
+					className={`shadow-2xl rounded p-[50px] mb-4 ${
+						isDarkMode ? "bg-black text-white" : "bg-white"
+					}`}>
 					<form onSubmit={handleSubmit(onSubmit)}>
 						<h2 className="text-[50px] mb-[20px] text-center font-cinzel font-bold">
 							Please Login!
 						</h2>
 						<div className="mb-4">
 							<label
-								className="block text-gray-700 text-sm font-bold mb-2"
+								className={`block text-sm font-bold mb-2 ${
+									isDarkMode ? "text-white" : "text-gray-700"
+								}`}
 								htmlFor="email">
 								Email
 							</label>
@@ -77,7 +84,9 @@ const Login = () => {
 						<div className="mb-6">
 							<div className="flex justify-between items-center">
 								<label
-									className="block text-gray-700 text-sm font-bold mb-2"
+									className={`block text-sm font-bold mb-2 ${
+										isDarkMode ? "text-white" : "text-gray-700"
+									}`}
 									htmlFor="password">
 									Password
 								</label>
@@ -107,7 +116,7 @@ const Login = () => {
 						<p className="text-center my-5 font-inter font-medium">
 							Don't Have An Account?{" "}
 							<Link to="/signup">
-								<span className="underline text-blue-700 font-semibold">
+								<span className="underline text-[#F08E00] font-semibold">
 									Sign Up
 								</span>
 							</Link>

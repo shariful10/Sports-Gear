@@ -40,9 +40,9 @@ const SocialLogin = () => {
 
 	return (
 		<div>
-			<div className="divider font-inter text-blue-700 font-semibold">Or Sign In With</div>
+			<div className="divider font-inter text-[#F08E00] font-semibold">Or Sign In With</div>
 			<div className="text-center">
-				<button className="btn-outline text-blue-700 border border-blue-700 hover:border-blue-700 hover:bg-blue-700 hover:text-white font-bold py-4 px-[80px] rounded font-inter mt-5">
+				<button className="btn-outline text-[#F08E00] border border-[#F08E00] hover:border-[#F08E00] hover:bg-[#F08E00] hover:text-white font-bold py-4 px-[80px] rounded font-inter mt-5">
 					<div
 						onClick={handleGoogleSignIn}
 						className="flex justify-center items-center gap-4">

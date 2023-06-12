@@ -1,17 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
+import useTheme from "../../Hooks/useTheme";
 
 const ClassesCard = ({ singleClass }) => {
 	const { _id, img, name, price, ins_name, seats } = singleClass;
+	const { isDarkMode } = useTheme();
 
 	const handleSelect = (item) => {
 		console.log(item);
 	};
 
 	return (
-		<div className="card w-full bg-base-100 shadow-xl">
+		<div
+			className={`card w-full shadow-xl ${
+				isDarkMode ? "bg-black text-white" : "bg-base-100"
+			}`}>
 			<img className="rounded-t-2xl h-[300px] w-full" src={img} alt="Shoes" />
 			<div
-				className={`card-body ${seats === 0 ? "bg-red-800 rounded-b-2xl text-white" : ""}`}>
+				className={`card-body ${
+					seats === 0 ? "bg-red-800 rounded-b-2xl text-white" : ""
+				} `}>
 				<h2 className="text-xl font-semibold font-inter">
 					Class Name: <span className="text-[16px] font-medium">{name}</span>
 				</h2>

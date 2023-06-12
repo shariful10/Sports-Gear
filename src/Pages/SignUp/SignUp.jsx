@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
+import useTheme from "../../Hooks/useTheme";
 
 const SignUp = () => {
 	const { createUser, updateUserProfile } = useAuth();
@@ -19,6 +20,7 @@ const SignUp = () => {
 	} = useForm();
 	const [showPass, setShowPass] = useState(false);
 	const [showConfifm, setShowConfifm] = useState(false);
+	const { isDarkMode } = useTheme();
 
 	const onSubmit = (data) => {
 		console.log(data);
@@ -62,20 +64,25 @@ const SignUp = () => {
 	};
 
 	return (
-		<div className="my-container md:flex justify-center items-center gap-6 my-[50px] md:my-[80px]">
+		<div className="my-container md:flex justify-center items-center gap-6 py-[50px] md:py-[80px]">
 			<Helmet>
 				<title>Sports Gear | Sign Up</title>
 			</Helmet>
 			<img className="md:w-1/2 shadow-2xl" src="https://i.ibb.co/HYJpvz5/login.jpg" alt="" />
 			<div className="md:w-1/2">
-				<div className="bg-white shadow-2xl rounded p-[50px] mb-4">
+				<div
+					className={`shadow-2xl rounded p-[50px] mb-4 ${
+						isDarkMode ? "bg-black text-white" : "bg-white"
+					}`}>
 					<form onSubmit={handleSubmit(onSubmit)}>
 						<h2 className="text-[50px] mb-[20px] text-center font-cinzel font-bold">
 							Please Sign Up!
 						</h2>
 						<div className="mb-4">
 							<label
-								className="block text-gray-700 text-sm font-bold mb-2"
+								className={`block text-sm font-bold mb-2 ${
+									isDarkMode ? "text-white" : "text-gray-700"
+								}`}
 								htmlFor="email">
 								Name
 							</label>
@@ -89,7 +96,9 @@ const SignUp = () => {
 						</div>
 						<div className="mb-4">
 							<label
-								className="block text-gray-700 text-sm font-bold mb-2"
+								className={`block text-sm font-bold mb-2 ${
+									isDarkMode ? "text-white" : "text-gray-700"
+								}`}
 								htmlFor="email">
 								Email
 							</label>
@@ -105,7 +114,9 @@ const SignUp = () => {
 						</div>
 						<div className="mb-4">
 							<label
-								className="block text-gray-700 text-sm font-bold mb-2"
+								className={`block text-sm font-bold mb-2 ${
+									isDarkMode ? "text-white" : "text-gray-700"
+								}`}
 								htmlFor="email">
 								Photo URL
 							</label>
@@ -123,7 +134,9 @@ const SignUp = () => {
 							<div className="mb-6">
 								<div className="flex justify-between items-center">
 									<label
-										className="block text-gray-700 text-sm font-bold mb-2"
+										className={`block text-sm font-bold mb-2 ${
+											isDarkMode ? "text-white" : "text-gray-700"
+										}`}
 										htmlFor="password">
 										Password
 									</label>
@@ -165,7 +178,9 @@ const SignUp = () => {
 							<div className="mb-6">
 								<div className="flex justify-between items-center">
 									<label
-										className="block text-gray-700 text-sm font-bold mb-2"
+										className={`block text-sm font-bold mb-2 ${
+											isDarkMode ? "text-white" : "text-gray-700"
+										}`}
 										htmlFor="password">
 										Confirm Password
 									</label>
@@ -213,7 +228,7 @@ const SignUp = () => {
 						<p className="text-center my-5 font-inter font-medium">
 							Already Have An Account?{" "}
 							<Link to="/login">
-								<span className="underline text-blue-700 font-semibold">Login</span>
+								<span className="underline text-[#F08E00] font-semibold">Login</span>
 							</Link>
 						</p>
 					</form>
