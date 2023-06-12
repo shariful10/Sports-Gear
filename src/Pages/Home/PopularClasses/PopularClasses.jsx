@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import SectionTitle from "../../../Components/SectionTitle";
 import PopularClass from "./PopularClass";
 import useClasses from "../../../Hooks/useClasses";

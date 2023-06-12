@@ -1,18 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import SectionTitle from "../../../Components/SectionTitle";
 import PopularInsrtructor from "./PopularInsrtructor";
+import useInstructors from "../../../Hooks/useInstructors";
 
 const PopularInstructors = () => {
-	const [instructors, setInstructors] = useState([]);
-
-	useEffect(() => {
-		fetch("instructors.json")
-			.then((res) => res.json())
-			.then((data) => {
-				const popularInstructors = data.filter((item) => item.category === "popular");
-				setInstructors(popularInstructors);
-			});
-	}, []);
+	const [instructors] = useInstructors();
+	const popular = instructors.filter((item) => item.category === "popular");
 
 	return (
 		<section>
@@ -23,7 +16,7 @@ const PopularInstructors = () => {
 				}
 			/>
 			<div className="grid md:grid-cols-3 gap-6 mb-[50px]">
-				{instructors.slice(0, 6).map((item) => (
+				{popular.slice(0, 6).map((item) => (
 					<PopularInsrtructor key={item._id} item={item} />
 				))}
 			</div>
