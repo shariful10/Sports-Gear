@@ -10,7 +10,8 @@
 * Then Create Popular Classes & Popular Instructor Section On Home Page
 * Then Create Instructor Page
 * Then Create Classes Page
-* Then Implement Dynamic Title Using React Helmet 
+* Then Implement Dynamic Title Using React Helmet
+* Added Dark Mode On Hole Website 
 
 ### Used Packages:
 * swiper
