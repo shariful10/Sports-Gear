@@ -137,7 +137,7 @@ const NavBar = () => {
 					/>
 				</Link>
 				<ul className="items-center hidden space-x-8 lg:flex">{navItems}</ul>
-				<div className="flex items-center gap-4 mr-24 md:mr-0">
+				<div className="flex items-center gap-6 md:gap-4 mr-[75px] md:mr-0">
 					{user && (
 						<img
 							className="h-12 w-12 rounded-full"
@@ -165,7 +165,7 @@ const NavBar = () => {
 						aria-label="Open Menu"
 						title="Open Menu"
 						onClick={() => setIsMenuOpen(true)}>
-						<HiMenuAlt3 className="h-6 w-6 text-[#f8a831] hover:text-blue-500 focus:text-blue-500" />
+						<HiMenuAlt3 className="h-8 w-8 text-[#f8a831] hover:text-blue-500 focus:text-blue-500" />
 					</button>
 					{isMenuOpen && (
 						<div className="absolute top-0 left-0 w-full z-10">
@@ -187,13 +187,13 @@ const NavBar = () => {
 											title="Close Menu"
 											className=""
 											onClick={() => setIsMenuOpen(false)}>
-											<HiOutlineX className="h-6 w-6 text-[#f8a831] hover:text-blue-500 focus:text-blue-500" />
+											<HiOutlineX className="h-8 w-8 text-[#f8a831] hover:text-blue-500 focus:text-blue-500" />
 										</button>
 									</div>
 								</div>
 								{/* Mobile Nav Items Section */}
 								<nav>
-									<ul className="space-y-4">{mobNavItems}</ul>
+									<ul className="space-y-4 pb-4">{mobNavItems}</ul>
 								</nav>
 							</div>
 						</div>
