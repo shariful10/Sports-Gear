@@ -3,6 +3,10 @@ import React, { useState } from "react";
 const ClassesCard = ({ singleClass }) => {
 	const { _id, img, name, price, ins_name, seats } = singleClass;
 
+	const handleSelect = (item) => {
+		console.log(item);
+	};
+
 	return (
 		<div className="card w-full bg-base-100 shadow-xl">
 			<img className="rounded-t-2xl h-[300px] w-full" src={img} alt="Shoes" />
@@ -18,6 +22,7 @@ const ClassesCard = ({ singleClass }) => {
 				</p>
 				<div className="card-actions justify-end">
 					<button
+						onClick={() => handleSelect(singleClass)}
 						title={`${seats === 0 ? "Seat Not Available" : ""}`}
 						className={`${
 							seats === 0
