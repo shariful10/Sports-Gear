@@ -45,3 +45,11 @@
 	color: white !important;
 	background-color: transparent !important;
 }
+
+.btn-role {
+	@apply bg-blue-600 hover:bg-[#f08e00] py-4 px-5 text-white font-inter rounded-lg font-medium;
+}
+
+.btn-ins {
+	@apply bg-[#f08e00] hover:bg-blue-600 py-4 px-5 text-white font-inter rounded-lg font-medium;
+}

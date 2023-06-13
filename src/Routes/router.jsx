@@ -56,8 +56,12 @@ export const router = createBrowserRouter([
 				path: "addclass",
 				element: <AddClass />,
 			},
+			// {
+			// 	path: "classes",
+			// 	element: <ManagCl />,
+			// },
 			{
-				path: "manage-users",
+				path: "users",
 				element: <ManageUsers />,
 			},
 		],

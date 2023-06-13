@@ -4,6 +4,8 @@ import useTheme from "../Hooks/useTheme";
 
 const Dashboard = () => {
 	const { isDarkMode } = useTheme();
+	const isAdmin = true; //TODO: Load Data from the server
+	const isInstructor = false; //TODO: Load Data from the server
 
 	return (
 		<div className={`drawer lg:drawer-open ${isDarkMode ? "bg-black" : ""}`}>
@@ -17,25 +19,41 @@ const Dashboard = () => {
 			<div className="drawer-side bg-blue-700">
 				<label htmlFor="my-drawer-2" className="drawer-overlay"></label>
 				<ul className="menu p-4 w-80">
-					{/* Sidebar content here */}
-					<li>
-						<NavLink to="/dashboard/manage-users">Manage Users</NavLink>
-					</li>
-					<li>
-						<NavLink to="/dashboard/addclass">ADD A CLASS</NavLink>
-					</li>
-					<li>
-						<NavLink to="/dashboard/selected">MY SELECTED CLASSES</NavLink>
-					</li>
-					<li>
-						<NavLink to="/enrolled">MY ENROLLED CLASSES</NavLink>
-					</li>
-					<li>
-						<NavLink to="/payment">PAYMENT</NavLink>
-					</li>
-					<li>
-						<NavLink to="/history">PAYMENT HISTORY</NavLink>
-					</li>
+					{isAdmin ? (
+						<>
+							<li>
+								<NavLink to="/dashboard/classes">MANAGE CLASSES</NavLink>
+							</li>
+							<li>
+								<NavLink to="/dashboard/users">MANAGE USERS</NavLink>
+							</li>
+						</>
+					) : isInstructor ? (
+						<>
+							<li>
+								<NavLink to="/dashboard/addclass">ADD A CLASS</NavLink>
+							</li>
+							<li>
+								<NavLink to="/dashboard/myclasses">MY CLASSES</NavLink>
+							</li>
+						</>
+					) : (
+						<>
+							<li>
+								<NavLink to="/dashboard/selected">MY SELECTED CLASSES</NavLink>
+							</li>
+							<li>
+								<NavLink to="/dashboard/enrolled">MY ENROLLED CLASSES</NavLink>
+							</li>
+							<li>
+								<NavLink to="/dashboard/payment">PAYMENT</NavLink>
+							</li>
+							<li>
+								<NavLink to="/dashboard/history">PAYMENT HISTORY</NavLink>
+							</li>
+						</>
+					)}
+
 					<div className="mt-5">
 						<hr />
 					</div>

@@ -15,16 +15,26 @@ const SocialLogin = () => {
 	const handleGoogleSignIn = () => {
 		googleSignIn()
 			.then((res) => {
-				const user = res.user;
-				console.log(user);
-				Swal.fire({
-					position: "top-center",
-					icon: "success",
-					title: "Successfully Login",
-					showConfirmButton: false,
-					timer: 1500,
-				});
-				navigate(from, { replace: true });
+				const loggedInUser = res.user;
+				const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email };
+				fetch("http://localhost:5000/users", {
+					method: "POST",
+					headers: {
+						"content-type": "application/json",
+					},
+					body: JSON.stringify(saveUser),
+				})
+					.then((res) => res.json())
+					.then(() => {
+						Swal.fire({
+							position: "top-center",
+							icon: "success",
+							title: "Successfully Login",
+							showConfirmButton: false,
+							timer: 1500,
+						});
+						navigate(from, { replace: true });
+					});
 			})
 			.catch((err) => {
 				console.log(err);

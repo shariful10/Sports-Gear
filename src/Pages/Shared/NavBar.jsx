@@ -10,6 +10,9 @@ const NavBar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const { isDarkMode, handleDarkMode } = useTheme();
 
+	const isAdmin = true; //TODO: Load Data from the server
+	const isInstructor = false;
+
 	const handleLogout = () => {
 		logOut()
 			.then(() => {})
@@ -40,7 +43,13 @@ const NavBar = () => {
 			{user && (
 				<li>
 					<NavLink
-						to="/dashboard/addclass"
+						to={`${
+							isAdmin
+								? "/dashboard/users"
+								: isInstructor
+								? "/dashboard/addclass"
+								: "/dashboard/selected"
+						}`}
 						className={({ isActive }) => (isActive ? "active" : "default")}>
 						Dashboard
 					</NavLink>
@@ -169,7 +178,12 @@ const NavBar = () => {
 					</button>
 					{isMenuOpen && (
 						<div className="absolute top-0 left-0 w-full z-10">
-							<div className={`p-4 border rounded shadow-sm ${isDarkMode?'bg-black border-black': 'bg-gray-500 border-gray-500'}`}>
+							<div
+								className={`p-4 border rounded shadow-sm ${
+									isDarkMode
+										? "bg-black border-black"
+										: "bg-gray-500 border-gray-500"
+								}`}>
 								<div className="flex items-center justify-between mb-4">
 									<div>
 										<Link to="/">

@@ -23,7 +23,6 @@ const SignUp = () => {
 	const { isDarkMode } = useTheme();
 
 	const onSubmit = (data) => {
-		console.log(data);
 		if (data.password !== data.confirm) {
 			Swal.fire({
 				position: "top-center",
@@ -39,16 +38,28 @@ const SignUp = () => {
 			console.log(loggedUser);
 			updateUserProfile(data.name, data.url)
 				.then(() => {
-					console.log("Updated user profile");
-					reset();
-					Swal.fire({
-						position: "top-center",
-						icon: "success",
-						title: "Sign Up Successful",
-						showConfirmButton: false,
-						timer: 1500,
-					});
-					navigate("/");
+					const saveUser = {name: data.name, email: data.email};
+					fetch("http://localhost:5000/users", {
+						method: "POST",
+						headers: {
+							"content-type": "application/json",
+						},
+						body: JSON.stringify(saveUser),
+					})
+						.then((res) => res.json())
+						.then((data) => {
+							if (data.insertedId) {
+								reset();
+								Swal.fire({
+									position: "top-center",
+									icon: "success",
+									title: "Sign Up Successful",
+									showConfirmButton: false,
+									timer: 1500,
+								});
+								navigate("/");
+							}
+						});
 				})
 				.catch((err) => {
 					console.log(err);
@@ -128,7 +139,7 @@ const SignUp = () => {
 								className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								type="url"
 								{...register("url", { required: true })}
-								placeholder="Email"
+								placeholder="Photo URL"
 							/>
 							{errors.url && (
 								<span className="text-red-600">Photo URL is required</span>
