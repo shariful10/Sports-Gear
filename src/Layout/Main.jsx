@@ -10,12 +10,7 @@ const Main = () => {
 	return (
 		<div>
 			<NavBar />
-			<div
-				className={`${
-					isDarkMode
-						? "bg-[#201f1f] min-h-[calc(100vh-448.073px)] "
-						: "min-h-[calc(100vh-448.073px)]"
-				}`}>
+			<div className={`min-h-[calc(100vh-448.073px)] ${isDarkMode ? "bg-[#201f1f]" : ""}`}>
 				<div className="my-container px-5 md:px-0">
 					<Outlet />
 				</div>

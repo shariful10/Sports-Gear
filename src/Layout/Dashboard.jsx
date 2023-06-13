@@ -8,7 +8,7 @@ const Dashboard = () => {
 	const isInstructor = false; //TODO: Load Data from the server
 
 	return (
-		<div className={`drawer lg:drawer-open ${isDarkMode ? "bg-black" : ""}`}>
+		<div className={`drawer lg:drawer-open ${isDarkMode ? "bg-[#201f1f]" : ""}`}>
 			<input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 			<div className="drawer-content flex flex-col items-center justify-center">
 				<Outlet />
