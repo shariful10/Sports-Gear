@@ -24,3 +24,4 @@
 * react-hook-form
 * react-router-dom
 * react-helmet-async
+* tanstack/react-query
