@@ -55,7 +55,11 @@ const Login = () => {
 			<Helmet>
 				<title>Sports Gear | Login</title>
 			</Helmet>
-			<img className="md:w-1/2 shadow-2xl" src="https://i.ibb.co/HYJpvz5/login.jpg" alt="" />
+			<img
+				className={`md:w-1/2 shadow-2xl ${isDarkMode ? "bg-black" : ""}`}
+				src="https://i.ibb.co/3TPbZLF/sign-up.png"
+				alt=""
+			/>
 			<div className="md:w-1/2">
 				<div
 					className={`shadow-2xl rounded p-[50px] mb-4 ${

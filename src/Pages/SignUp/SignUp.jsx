@@ -68,7 +68,11 @@ const SignUp = () => {
 			<Helmet>
 				<title>Sports Gear | Sign Up</title>
 			</Helmet>
-			<img className="md:w-1/2 shadow-2xl" src="https://i.ibb.co/HYJpvz5/login.jpg" alt="" />
+			<img
+				className={`md:w-1/2 shadow-2xl ${isDarkMode ? "bg-black" : ""}`}
+				src="https://i.ibb.co/3TPbZLF/sign-up.png"
+				alt=""
+			/>
 			<div className="md:w-1/2">
 				<div
 					className={`shadow-2xl rounded p-[50px] mb-4 ${
@@ -228,7 +232,9 @@ const SignUp = () => {
 						<p className="text-center my-5 font-inter font-medium">
 							Already Have An Account?{" "}
 							<Link to="/login">
-								<span className="underline text-[#F08E00] font-semibold">Login</span>
+								<span className="underline text-[#F08E00] font-semibold">
+									Login
+								</span>
 							</Link>
 						</p>
 					</form>
