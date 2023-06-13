@@ -29,3 +29,19 @@
 .btn-error {
 	@apply text-xl text-white bg-[#F08E00] hover:bg-blue-500 font-inter font-medium py-4 px-5 rounded-lg;
 }
+
+.drawer-side a.active {
+	color: #f08e00 !important;
+}
+
+.drawer-side a {
+	color: white !important;
+	background-color: transparent !important;
+	font-size: 16px;
+	font-family: "Inter", sans-serif;
+}
+
+.drawer-side a:hover {
+	color: white !important;
+	background-color: transparent !important;
+}

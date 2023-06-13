@@ -11,7 +11,7 @@
 * Then Create Instructor Page
 * Then Create Classes Page
 * Then Implement Dynamic Title Using React Helmet
-* Added Dark Mode On Hole Website 
+* Dark Mode Added On Full Website
 
 ### Used Packages:
 * swiper

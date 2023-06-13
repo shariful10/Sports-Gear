@@ -4,7 +4,7 @@ import { Navigate, useLocation } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
 	const { user, loading } = useAuth();
-    const location = useLocation();
+	const location = useLocation();
 
 	if (loading) {
 		return (
@@ -12,7 +12,7 @@ const PrivateRoute = ({ children }) => {
 				<div role="status">
 					<svg
 						aria-hidden="true"
-						className="w-14 h-14 mx-auto text-[#BB8506] animate-spin fill-blue-600"
+						className="w-14 h-14 mx-auto text-[#111827] animate-spin fill-[#BB8506]"
 						viewBox="0 0 100 101"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg">
@@ -28,6 +28,9 @@ const PrivateRoute = ({ children }) => {
 					<span className="sr-only">Loading...</span>
 				</div>
 			</div>
+			// <div className="flex justify-center items-center h-screen">
+			// 	<div className="animate-spin rounded-full h-16 w-16 border-4 border-t-4 border-blue-600"></div>
+			// </div>
 		);
 	}
 
