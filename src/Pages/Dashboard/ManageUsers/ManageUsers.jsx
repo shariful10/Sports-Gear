@@ -3,13 +3,63 @@ import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../../Components/SectionTitle";
 import { useQuery } from "@tanstack/react-query";
 import useTheme from "../../../Hooks/useTheme";
+import Swal from "sweetalert2";
 
 const ManageUsers = () => {
 	const { isDarkMode } = useTheme();
+
 	const { data: users = [], refetch } = useQuery(["users"], async () => {
 		const res = await fetch("http://localhost:5000/users");
 		return res.json();
 	});
+
+	const handleMakeAdmin = (user) => {
+		fetch(`http://localhost:5000/users/admin/${user._id}`, {
+			method: "PATCH",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ role: "Admin" }),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				if (data.modifiedCount) {
+					Swal.fire({
+						position: "top-center",
+						icon: "success",
+						title: `${user.name} is an Admin Now!`,
+						showConfirmButton: false,
+						timer: 1500,
+					});
+					refetch();
+				}
+			});
+	};
+
+	const handleMakeInstructor = (user) => {
+		fetch(`http://localhost:5000/users/admin/${user._id}`, {
+			method: "PATCH",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ role: "Instructor" }),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				if (data.modifiedCount) {
+					Swal.fire({
+						position: "top-center",
+						icon: "success",
+						title: `${user.name} is an Instructor Now!`,
+						showConfirmButton: false,
+						timer: 1500,
+					});
+					refetch();
+				}
+			});
+	};
 
 	return (
 		<div className="w-full">
@@ -41,6 +91,9 @@ const ManageUsers = () => {
 								<th scope="col" className="px-8 py-3 font-inter">
 									Role
 								</th>
+								<th scope="col" className="px-8 py-3 font-inter">
+									
+								</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -48,9 +101,7 @@ const ManageUsers = () => {
 								<tr
 									key={user._id}
 									className={`border-b ${
-										isDarkMode
-											? "border-white bg-black text-white"
-											: "bg-white"
+										isDarkMode ? "border-white bg-black text-white" : "bg-white"
 									}`}>
 									<th
 										scope="row"
@@ -63,15 +114,27 @@ const ManageUsers = () => {
 									<td className="px-6 py-4 font-inter">{user.email}</td>
 									<td className="py-4 font-inter">
 										<div className="flex gap-6">
-											{user.role ? (
+											{user.role === "Admin" ? (
 												"Admin"
 											) : (
-												<button className="btn-role">Make Admin</button>
+												<button
+													onClick={() => handleMakeAdmin(user)}
+													className="btn-role">
+													Make Admin
+												</button>
 											)}
-											{user.role ? (
+										</div>
+									</td>
+									<td className="py-4 font-inter">
+										<div className="flex gap-6">
+											{user.role === "Instructor" ? (
 												"Instructor"
 											) : (
-												<button className="btn-ins">Make Instructor</button>
+												<button
+													onClick={() => handleMakeInstructor(user)}
+													className="btn-ins">
+													Make Instructor
+												</button>
 											)}
 										</div>
 									</td>
