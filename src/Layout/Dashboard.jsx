@@ -66,6 +66,12 @@ const Dashboard = () => {
 					<li>
 						<NavLink to="/">HOME</NavLink>
 					</li>
+					<li>
+						<NavLink to="/classes">CLASSES</NavLink>
+					</li>
+					<li>
+						<NavLink to="/instructor">INSTRUCTOR</NavLink>
+					</li>
 				</ul>
 			</div>
 		</div>

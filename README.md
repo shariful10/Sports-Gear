@@ -30,4 +30,3 @@
 * react-router-dom
 * react-helmet-async
 * tanstack/react-query
-* react-awesome-reveal
