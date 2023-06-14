@@ -106,7 +106,13 @@ const NavBar = () => {
 			{user && (
 				<li>
 					<NavLink
-						to="/dashboard/selected"
+						to={`${
+							isAdmin
+								? "/dashboard/users"
+								: isInstructor
+								? "/dashboard/addclass"
+								: "/dashboard/selected"
+						}`}
 						className={({ isActive }) => (isActive ? "mobileActive" : "mobileDefault")}>
 						Dashboard
 					</NavLink>
