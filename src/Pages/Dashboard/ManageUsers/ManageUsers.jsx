@@ -75,7 +75,7 @@ const ManageUsers = () => {
 					Total Users: {users.length}
 				</h2>
 
-				<div className="relative overflow-x-auto md:px-96 mt-5 ">
+				<div className="relative overflow-x-auto md:px-96 mt-5">
 					<table className="w-full text-sm text-left text-gray-500">
 						<thead className="text-xs text-white uppercase bg-blue-600">
 							<tr>
