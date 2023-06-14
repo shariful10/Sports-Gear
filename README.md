@@ -14,6 +14,7 @@
 * Dark Mode Added On Full Website
 * Tanstack Query Use On Manage Users Page
 * Use Axios Call On Auth State Change
+* About Us Section Added On Home Page With Framer Motion Animation
 
 ### Used Packages:
 * axios
@@ -24,6 +25,7 @@
 * tailwindcss
 * react-icons
 * sweetalert2
+* framer-motion
 * react-hook-form
 * react-router-dom
 * react-helmet-async
