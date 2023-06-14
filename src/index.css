@@ -26,6 +26,10 @@
 	@apply bg-[#F08E00] hover:bg-blue-500 text-white font-bold py-4 w-full rounded font-inter;
 }
 
+.btn-add {
+	@apply bg-blue-500 hover:bg-[#F08E00] text-white font-bold py-4 w-full rounded font-inter;
+}
+
 .btn-error {
 	@apply text-xl text-white bg-[#F08E00] hover:bg-blue-500 font-inter font-medium py-4 px-5 rounded-lg;
 }
