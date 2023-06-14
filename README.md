@@ -12,8 +12,11 @@
 * Then Create Classes Page
 * Then Implement Dynamic Title Using React Helmet
 * Dark Mode Added On Full Website
+* Tanstack Query Use On Manage Users Page
+* Use Axios Call On Auth State Change
 
 ### Used Packages:
+* axios
 * swiper
 * daisyui
 * firebase

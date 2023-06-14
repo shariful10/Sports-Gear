@@ -25,6 +25,7 @@ const ManageUsers = () => {
 			.then((data) => {
 				console.log(data);
 				if (data.modifiedCount) {
+					refetch();
 					Swal.fire({
 						position: "top-center",
 						icon: "success",
@@ -32,7 +33,6 @@ const ManageUsers = () => {
 						showConfirmButton: false,
 						timer: 1500,
 					});
-					refetch();
 				}
 			});
 	};
@@ -91,9 +91,7 @@ const ManageUsers = () => {
 								<th scope="col" className="px-8 py-3 font-inter">
 									Role
 								</th>
-								<th scope="col" className="px-8 py-3 font-inter">
-									
-								</th>
+								<th scope="col" className="px-8 py-3 font-inter"></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -115,7 +113,7 @@ const ManageUsers = () => {
 									<td className="py-4 font-inter">
 										<div className="flex gap-6">
 											{user.role === "Admin" ? (
-												"Admin"
+												<span className="text-blue-700 font-inter font-medium">Admin</span>
 											) : (
 												<button
 													onClick={() => handleMakeAdmin(user)}
@@ -128,7 +126,7 @@ const ManageUsers = () => {
 									<td className="py-4 font-inter">
 										<div className="flex gap-6">
 											{user.role === "Instructor" ? (
-												"Instructor"
+												<span className="text-[#f08e00] font-inter font-medium">Instructor</span>
 											) : (
 												<button
 													onClick={() => handleMakeInstructor(user)}
