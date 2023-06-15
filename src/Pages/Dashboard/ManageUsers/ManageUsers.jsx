@@ -19,7 +19,7 @@ const ManageUsers = () => {
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify({ role: "Admin" }),
+			body: JSON.stringify({ role: "admin" }),
 		})
 			.then((res) => res.json())
 			.then((data) => {
@@ -43,7 +43,7 @@ const ManageUsers = () => {
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify({ role: "Instructor" }),
+			body: JSON.stringify({ role: "instructor" }),
 		})
 			.then((res) => res.json())
 			.then((data) => {
@@ -95,7 +95,7 @@ const ManageUsers = () => {
 							</tr>
 						</thead>
 						<tbody>
-							{users.map((user, index) => (
+							{users?.map((user, index) => (
 								<tr
 									key={user._id}
 									className={`border-b ${
@@ -112,7 +112,7 @@ const ManageUsers = () => {
 									<td className="px-6 py-4 font-inter">{user.email}</td>
 									<td className="py-4 font-inter">
 										<div className="flex gap-6">
-											{user.role === "Admin" ? (
+											{user.role === "admin" ? (
 												<span className="text-blue-700 font-inter font-medium">Admin</span>
 											) : (
 												<button
@@ -125,7 +125,7 @@ const ManageUsers = () => {
 									</td>
 									<td className="py-4 font-inter">
 										<div className="flex gap-6">
-											{user.role === "Instructor" ? (
+											{user.role === "instructor" ? (
 												<span className="text-[#f08e00] font-inter font-medium">Instructor</span>
 											) : (
 												<button

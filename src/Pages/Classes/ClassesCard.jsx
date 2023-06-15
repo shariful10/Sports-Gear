@@ -2,7 +2,7 @@ import React from "react";
 import useTheme from "../../Hooks/useTheme";
 
 const ClassesCard = ({ singleClass }) => {
-	const { _id, img, name, price, ins_name, seats } = singleClass;
+	const { _id, image, name, price, ins_name, seats } = singleClass;
 	const { isDarkMode } = useTheme();
 
 	const handleSelect = (item) => {
@@ -14,7 +14,7 @@ const ClassesCard = ({ singleClass }) => {
 			className={`card w-full shadow-xl ${
 				isDarkMode ? "bg-black text-white" : "bg-base-100"
 			}`}>
-			<img className="rounded-t-2xl h-[300px] w-full" src={img} alt="Shoes" />
+			<img className="rounded-t-2xl h-[300px] w-full" src={image} alt="Shoes" />
 			<div
 				className={`card-body ${
 					seats === 0 ? "bg-red-800 rounded-b-2xl text-white" : ""

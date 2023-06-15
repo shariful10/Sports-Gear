@@ -4,14 +4,16 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import useTheme from "../../Hooks/useTheme";
+import useAdmin from "../../Hooks/useAdmin";
+import useInstructor from "../../Hooks/useInstructor";
+// import useUsers from "../../Hooks/useUsers";
 
 const NavBar = () => {
 	const { user, logOut } = useAuth();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const { isDarkMode, handleDarkMode } = useTheme();
-
-	const isAdmin = true; //TODO: Load Data from the server
-	const isInstructor = false;
+	const [isAdmin] = useAdmin();
+	const [isInstructor] = useInstructor();
 
 	const handleLogout = () => {
 		logOut()
@@ -45,7 +47,7 @@ const NavBar = () => {
 					<NavLink
 						to={`${
 							isAdmin
-								? "/dashboard/users"
+								? "/dashboard/classes"
 								: isInstructor
 								? "/dashboard/addclass"
 								: "/dashboard/selected"

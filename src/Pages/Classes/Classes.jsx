@@ -6,6 +6,7 @@ import ClassesCard from "./ClassesCard";
 
 const Classes = () => {
 	const [classes] = useClasses();
+	const status = classes.filter(item => item.status === 'Approved');
 
 	return (
 		<div className="contaier mx-auto">
@@ -14,7 +15,7 @@ const Classes = () => {
 			</Helmet>
 			<SectionCover heading={"Classes"} />
 			<div className="grid md:grid-cols-4 gap-6 py-[50px]">
-				{classes.map((singleClass) => (
+				{status.map((singleClass) => (
 					<ClassesCard key={singleClass._id} singleClass={singleClass} />
 				))}
 			</div>

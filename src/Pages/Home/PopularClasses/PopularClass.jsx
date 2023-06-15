@@ -2,7 +2,7 @@ import React from "react";
 import useTheme from "../../../Hooks/useTheme";
 
 const PopularClass = ({ item }) => {
-	const { _id, img, name, price, seats, students } = item;
+	const { _id, image, name, price, seats, students } = item;
 	const { isDarkMode } = useTheme();
 
 	return (
@@ -14,7 +14,7 @@ const PopularClass = ({ item }) => {
 			}`}>
 			<img
 				className="md:w-[325px] md:h-[325px] rounded-t-xl md:rounded-s-xl md:rounded-tr-none"
-				src={img}
+				src={image}
 				alt="Album"
 			/>
 			<div

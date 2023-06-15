@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const useInstructors = () => {
-    const [instructors, setInstructors] = useState([]);
+	const [instructors, setInstructors] = useState([]);
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
@@ -13,7 +13,7 @@ const useInstructors = () => {
 			});
 	}, []);
 
-    return [instructors, loading];
+	return [instructors, loading];
 };
 
 export default useInstructors;

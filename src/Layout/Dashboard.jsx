@@ -1,11 +1,21 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import useTheme from "../Hooks/useTheme";
+import useAdmin from "../Hooks/useAdmin";
+import useInstructor from "../Hooks/useInstructor";
 
 const Dashboard = () => {
 	const { isDarkMode } = useTheme();
-	const isAdmin = true; //TODO: Load Data from the server
-	const isInstructor = false; //TODO: Load Data from the server
+	// const isAdmin = true;
+	// const isInstructor = false;
+	// const [users] = useUsers();
+	// const admin = users.find(item => item.role === 'admin');
+	// const instructor = users.find(item => item.role === 'instructor');
+	const [isAdmin] = useAdmin();
+	const [isInstructor] = useInstructor();
+	// const [] = useAdmin();
+	console.log(isAdmin);
+	console.log(isInstructor);
 
 	return (
 		<div className={`drawer lg:drawer-open ${isDarkMode ? "bg-[#201f1f]" : ""}`}>

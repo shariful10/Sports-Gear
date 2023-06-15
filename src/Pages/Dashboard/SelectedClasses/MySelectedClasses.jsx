@@ -11,7 +11,7 @@ const MySelectedClasses = () => {
 			</Helmet>
 			<SectionTitle heading={"My Selected Classes"} />
             <div className="">
-                <h2>hwfeughuiwui</h2>
+                <h2>wrhauihuiwghi</h2>
             </div>
 		</div>
 	);

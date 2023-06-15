@@ -14,6 +14,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
 import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
 import FeedBack from "../Pages/Dashboard/FeedBack/FeedBack";
+import AdminRoute from "./AdminRoute";
 
 export const router = createBrowserRouter([
 	{
@@ -65,11 +66,19 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: "users",
-				element: <ManageUsers />,
+				element: (
+					<AdminRoute>
+						<ManageUsers />
+					</AdminRoute>
+				),
 			},
 			{
 				path: "classes",
-				element: <ManageClasses />,
+				element: (
+					<AdminRoute>
+						<ManageClasses />
+					</AdminRoute>
+				),
 			},
 			{
 				path: "feedback",
