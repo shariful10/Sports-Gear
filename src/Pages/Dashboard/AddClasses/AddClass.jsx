@@ -4,6 +4,8 @@ import SectionTitle from "../../../Components/SectionTitle";
 import useTheme from "../../../Hooks/useTheme";
 import useAuth from "../../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import useAxiosSecure from "./../../../Hooks/useAxiosSecure";
 
 const AddClass = () => {
 	const { isDarkMode } = useTheme();
@@ -17,6 +19,48 @@ const AddClass = () => {
 
 	const onSubmit = (data) => {
 		console.log(data);
+
+		const { name, price, email, instructor, seats, url, status } = data;
+		const newItem = {
+			name,
+			email,
+			price: parseFloat(price),
+			seats: parseFloat(seats),
+			instructor,
+			image: url,
+			status,
+		};
+		console.log(newItem);
+		fetch("http://localhost:5000/classes", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(newItem),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				if (data.insertedId) {
+					reset();
+					Swal.fire({
+						position: "top-center",
+						icon: "success",
+						title: "Successfully Add Class",
+						showConfirmButton: false,
+						timer: 1500,
+					});
+				}
+			})
+			.catch((error) => {
+				console.error("Error:", error);
+				Swal.fire({
+					position: "top-center",
+					icon: "error",
+					title: "Something went wrong",
+					showConfirmButton: false,
+					timer: 1500,
+				});
+			});
 	};
 
 	return (
@@ -80,7 +124,9 @@ const AddClass = () => {
 								{...register("url", { required: true })}
 								placeholder="Photo URL"
 							/>
-							{errors.url && <span className="text-red-600">Photo URL is required</span>}
+							{errors.url && (
+								<span className="text-red-600">Photo URL is required</span>
+							)}
 						</div>
 						<div className="mb-4">
 							<label
@@ -115,7 +161,9 @@ const AddClass = () => {
 								{...register("seats", { required: true })}
 								placeholder="Available Seats"
 							/>
-							{errors.seats && <span className="text-red-600">Seats is required</span>}
+							{errors.seats && (
+								<span className="text-red-600">Seats is required</span>
+							)}
 						</div>
 						<div className="mb-4">
 							<label
@@ -131,8 +179,24 @@ const AddClass = () => {
 								{...register("price", { required: true })}
 								placeholder="Price"
 							/>
-							{errors.price && <span className="text-red-600">Price is required</span>}
+							{errors.price && (
+								<span className="text-red-600">Price is required</span>
+							)}
 						</div>
+					</div>
+					<div className="mb-4">
+						<label
+							className={`block text-sm font-bold mb-2 ${
+								isDarkMode ? "text-white" : "text-gray-700"
+							}`}
+							htmlFor="number"></label>
+						<input
+							className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hidden"
+							type="text"
+							{...register("status", { required: true })}
+							defaultValue={"Pending"}
+							placeholder="Status"
+						/>
 					</div>
 					<div className="text-center">
 						<button className="btn-add" type="submit">
