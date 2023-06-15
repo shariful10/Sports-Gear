@@ -4,8 +4,8 @@ import useTheme from "../Hooks/useTheme";
 
 const Dashboard = () => {
 	const { isDarkMode } = useTheme();
-	const isAdmin = false; //TODO: Load Data from the server
-	const isInstructor = true; //TODO: Load Data from the server
+	const isAdmin = true; //TODO: Load Data from the server
+	const isInstructor = false; //TODO: Load Data from the server
 
 	return (
 		<div className={`drawer lg:drawer-open ${isDarkMode ? "bg-[#201f1f]" : ""}`}>

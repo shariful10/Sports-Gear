@@ -10,8 +10,8 @@ const NavBar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const { isDarkMode, handleDarkMode } = useTheme();
 
-	const isAdmin = false; //TODO: Load Data from the server
-	const isInstructor = true;
+	const isAdmin = true; //TODO: Load Data from the server
+	const isInstructor = false;
 
 	const handleLogout = () => {
 		logOut()

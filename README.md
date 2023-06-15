@@ -15,6 +15,7 @@
 * Tanstack Query Use On Manage Users Page
 * Use Axios Call On Auth State Change
 * About Us Section Added On Home Page With Framer Motion Animation
+* Add Class Implemented On Add a Class Page
 
 ### Used Packages:
 * axios
