@@ -13,6 +13,7 @@ import ManageUsers from "../Pages/Dashboard/ManageUsers/ManageUsers";
 import PrivateRoute from "./PrivateRoute";
 import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
 import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
+import FeedBack from "../Pages/Dashboard/FeedBack/FeedBack";
 
 export const router = createBrowserRouter([
 	{
@@ -69,6 +70,10 @@ export const router = createBrowserRouter([
 			{
 				path: "classes",
 				element: <ManageClasses />,
+			},
+			{
+				path: "feedback",
+				element: <FeedBack />,
 			},
 		],
 	},

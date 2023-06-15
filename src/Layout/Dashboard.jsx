@@ -27,6 +27,9 @@ const Dashboard = () => {
 							<li>
 								<NavLink to="/dashboard/users">MANAGE USERS</NavLink>
 							</li>
+							{/* <li>
+								<NavLink to="/dashboard/feedback">Feedback</NavLink>
+							</li> */}
 						</>
 					) : isInstructor ? (
 						<>

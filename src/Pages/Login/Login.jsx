@@ -113,7 +113,9 @@ const Login = () => {
 							)}
 						</div>
 						<div className="text-center">
-							<button className="btn-submit" type="submit">
+							<button
+								className="bg-[#F08E00] hover:bg- text-white font-bold py-4 w-full rounded font-inter"
+								type="submit">
 								Login
 							</button>
 						</div>

@@ -38,7 +38,7 @@ const SignUp = () => {
 			console.log(loggedUser);
 			updateUserProfile(data.name, data.url)
 				.then(() => {
-					const saveUser = {name: data.name, email: data.email};
+					const saveUser = { name: data.name, email: data.email };
 					fetch("http://localhost:5000/users", {
 						method: "POST",
 						headers: {
@@ -236,7 +236,9 @@ const SignUp = () => {
 							</div>
 						</div>
 						<div className="text-center">
-							<button className="btn-submit" type="submit">
+							<button
+								className="bg-[#F08E00] hover:bg- text-white font-bold py-4 w-full rounded font-inter"
+								type="submit">
 								Sign Up
 							</button>
 						</div>
