@@ -10,8 +10,8 @@ const MySelectedClasses = () => {
 				<title>Sports Gear | My Selected Classes</title>
 			</Helmet>
 			<SectionTitle heading={"My Selected Classes"} />
-            <div className="">
-                <h2>wrhauihuiwghi</h2>
+            <div className="my-container">
+                <h2>My Selected Classes</h2>
             </div>
 		</div>
 	);

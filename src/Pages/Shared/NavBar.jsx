@@ -6,14 +6,19 @@ import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import useTheme from "../../Hooks/useTheme";
 import useAdmin from "../../Hooks/useAdmin";
 import useInstructor from "../../Hooks/useInstructor";
-// import useUsers from "../../Hooks/useUsers";
 
 const NavBar = () => {
 	const { user, logOut } = useAuth();
+	console.log(user);
+
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const { isDarkMode, handleDarkMode } = useTheme();
 	const [isAdmin] = useAdmin();
 	const [isInstructor] = useInstructor();
+	// const isAdmin = true;
+	// const isInstructor = false;
+	// const isInstructor = true;
+	// const isAdmin = false;
 
 	const handleLogout = () => {
 		logOut()

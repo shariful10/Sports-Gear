@@ -15,6 +15,8 @@ import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
 import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
 import FeedBack from "../Pages/Dashboard/FeedBack/FeedBack";
 import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
+import StudentRoute from "./StudentRoute";
 
 export const router = createBrowserRouter([
 	{
@@ -54,15 +56,27 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				path: "selected",
-				element: <MySelectedClasses />,
+				element: (
+					<StudentRoute>
+						<MySelectedClasses />
+					</StudentRoute>
+				),
 			},
 			{
 				path: "addclass",
-				element: <AddClass />,
+				element: (
+					<InstructorRoute>
+						<AddClass />
+					</InstructorRoute>
+				),
 			},
 			{
 				path: "myclasses",
-				element: <MyClasses />,
+				element: (
+					<InstructorRoute>
+						<MyClasses />
+					</InstructorRoute>
+				),
 			},
 			{
 				path: "users",
@@ -82,7 +96,11 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: "feedback",
-				element: <FeedBack />,
+				element: (
+					<AdminRoute>
+						<FeedBack />
+					</AdminRoute>
+				),
 			},
 		],
 	},

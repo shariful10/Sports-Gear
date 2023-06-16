@@ -6,16 +6,15 @@ import useInstructor from "../Hooks/useInstructor";
 
 const Dashboard = () => {
 	const { isDarkMode } = useTheme();
-	// const isAdmin = true;
-	// const isInstructor = false;
-	// const [users] = useUsers();
-	// const admin = users.find(item => item.role === 'admin');
-	// const instructor = users.find(item => item.role === 'instructor');
 	const [isAdmin] = useAdmin();
 	const [isInstructor] = useInstructor();
-	// const [] = useAdmin();
-	console.log(isAdmin);
-	console.log(isInstructor);
+	console.log(isAdmin, isInstructor);
+	// console.log(isAdmin);
+	// console.log(isInstructor);
+	// const isAdmin = true;
+	// const isInstructor = false;
+	// const isInstructor = true;
+	// const isAdmin = false;
 
 	return (
 		<div className={`drawer lg:drawer-open ${isDarkMode ? "bg-[#201f1f]" : ""}`}>
@@ -37,9 +36,6 @@ const Dashboard = () => {
 							<li>
 								<NavLink to="/dashboard/users">MANAGE USERS</NavLink>
 							</li>
-							{/* <li>
-								<NavLink to="/dashboard/feedback">Feedback</NavLink>
-							</li> */}
 						</>
 					) : isInstructor ? (
 						<>

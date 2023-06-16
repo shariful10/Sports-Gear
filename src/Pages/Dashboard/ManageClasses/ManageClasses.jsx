@@ -2,12 +2,13 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../../Components/SectionTitle";
 import useTheme from "../../../Hooks/useTheme";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useQuery } from "@tanstack/react-query";
 
 const ManageClasses = () => {
 	const { isDarkMode } = useTheme();
+	const navigate = useNavigate();
 
 	const { data: classes = [], refetch } = useQuery(["classes"], async () => {
 		const res = await fetch("http://localhost:5000/classes");
@@ -19,7 +20,7 @@ const ManageClasses = () => {
 	const deniedStatus = classes.filter((item) => item.status === "Denied");
 
 	const handleMakePending = (item) => {
-		fetch(`http://localhost:5000/classes/admin/${item._id}`, {
+		fetch(`http://localhost:5000/classes/admin/status/${item._id}`, {
 			method: "PATCH",
 			headers: {
 				"Content-Type": "application/json",
@@ -43,7 +44,7 @@ const ManageClasses = () => {
 	};
 
 	const handleMakeApproved = (item) => {
-		fetch(`http://localhost:5000/classes/admin/${item._id}`, {
+		fetch(`http://localhost:5000/classes/admin/status/${item._id}`, {
 			method: "PATCH",
 			headers: {
 				"Content-Type": "application/json",
@@ -67,7 +68,7 @@ const ManageClasses = () => {
 	};
 
 	const handleMakeDenied = (item) => {
-		fetch(`http://localhost:5000/classes/admin/${item._id}`, {
+		fetch(`http://localhost:5000/classes/admin/status/${item._id}`, {
 			method: "PATCH",
 			headers: {
 				"Content-Type": "application/json",
@@ -86,6 +87,9 @@ const ManageClasses = () => {
 						timer: 1500,
 					});
 					refetch();
+					navigate("/dashboard/feedback", {
+						state: item._id,
+					});
 				}
 			});
 	};
@@ -194,13 +198,11 @@ const ManageClasses = () => {
 													Denied
 												</span>
 											) : (
-												<Link to="/dashboard/feedback">
-													<button
-														onClick={() => handleMakeDenied(item)}
-														className="btn-denied">
-														Denied
-													</button>
-												</Link>
+												<button
+													onClick={() => handleMakeDenied(item)}
+													className="btn-denied">
+													Denied
+												</button>
 											)}
 										</div>
 									</td>
@@ -263,13 +265,11 @@ const ManageClasses = () => {
 													Denied
 												</span>
 											) : (
-												<Link to="/dashboard/feedback">
-													<button
-														onClick={() => handleMakeDenied(item)}
-														className="btn-denied">
-														Denied
-													</button>
-												</Link>
+												<button
+													onClick={() => handleMakeDenied(item)}
+													className="btn-denied">
+													Denied
+												</button>
 											)}
 										</div>
 									</td>
@@ -332,13 +332,11 @@ const ManageClasses = () => {
 													Denied
 												</span>
 											) : (
-												<Link to="/dashboard/feedback">
-													<button
-														onClick={() => handleMakeDenied(item)}
-														className="btn-denied">
-														Denied
-													</button>
-												</Link>
+												<button
+													onClick={() => handleMakeDenied(item)}
+													className="btn-denied">
+													Denied
+												</button>
 											)}
 										</div>
 									</td>

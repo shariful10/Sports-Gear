@@ -4,9 +4,12 @@ import SectionTitle from "../../../Components/SectionTitle";
 import { useQuery } from "@tanstack/react-query";
 import useTheme from "../../../Hooks/useTheme";
 import Swal from "sweetalert2";
+import useAxiosSecure from "./../../../Hooks/useAxiosSecure";
+import axios from "axios";
 
 const ManageUsers = () => {
 	const { isDarkMode } = useTheme();
+	const [axiosSecure] = useAxiosSecure();
 
 	const { data: users = [], refetch } = useQuery(["users"], async () => {
 		const res = await fetch("http://localhost:5000/users");
@@ -14,41 +17,28 @@ const ManageUsers = () => {
 	});
 
 	const handleMakeAdmin = (user) => {
-		fetch(`http://localhost:5000/users/admin/${user._id}`, {
-			method: "PATCH",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ role: "admin" }),
-		})
-			.then((res) => res.json())
-			.then((data) => {
-				console.log(data);
-				if (data.modifiedCount) {
-					refetch();
-					Swal.fire({
-						position: "top-center",
-						icon: "success",
-						title: `${user.name} is an Admin Now!`,
-						showConfirmButton: false,
-						timer: 1500,
-					});
-				}
-			});
+		axiosSecure.patch(`/users/admin/${user._id}`, { role: "admin" }).then((data) => {
+			console.log(data.data);
+			if (data.data.modifiedCount) {
+				refetch();
+				Swal.fire({
+					position: "top-center",
+					icon: "success",
+					title: `${user.name} is an Admin Now!`,
+					showConfirmButton: false,
+					timer: 1500,
+				});
+			}
+		});
 	};
 
 	const handleMakeInstructor = (user) => {
-		fetch(`http://localhost:5000/users/admin/${user._id}`, {
-			method: "PATCH",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ role: "instructor" }),
-		})
-			.then((res) => res.json())
+		axiosSecure
+			.patch(`/users/admin/${user._id}`, { role: "instructor" })
+
 			.then((data) => {
-				console.log(data);
-				if (data.modifiedCount) {
+				console.log(data.data);
+				if (data.data.modifiedCount) {
 					Swal.fire({
 						position: "top-center",
 						icon: "success",
@@ -95,49 +85,56 @@ const ManageUsers = () => {
 							</tr>
 						</thead>
 						<tbody>
-							{users?.map((user, index) => (
-								<tr
-									key={user._id}
-									className={`border-b ${
-										isDarkMode ? "border-white bg-black text-white" : "bg-white"
-									}`}>
-									<th
-										scope="row"
-										className={`px-6 py-4 font-medium ${
-											isDarkMode ? "text-white" : "text-gray-900"
-										} whitespace-nowrap`}>
-										{index + 1}
-									</th>
-									<td className="px-6 py-4 font-inter">{user.name}</td>
-									<td className="px-6 py-4 font-inter">{user.email}</td>
-									<td className="py-4 font-inter">
-										<div className="flex gap-6">
-											{user.role === "admin" ? (
-												<span className="text-blue-700 font-inter font-medium">Admin</span>
-											) : (
-												<button
-													onClick={() => handleMakeAdmin(user)}
-													className="btn-role">
-													Make Admin
-												</button>
-											)}
-										</div>
-									</td>
-									<td className="py-4 font-inter">
-										<div className="flex gap-6">
-											{user.role === "instructor" ? (
-												<span className="text-[#f08e00] font-inter font-medium">Instructor</span>
-											) : (
-												<button
-													onClick={() => handleMakeInstructor(user)}
-													className="btn-ins">
-													Make Instructor
-												</button>
-											)}
-										</div>
-									</td>
-								</tr>
-							))}
+							{users?.length > 0 &&
+								users.map((user, index) => (
+									<tr
+										key={user._id}
+										className={`border-b ${
+											isDarkMode
+												? "border-white bg-black text-white"
+												: "bg-white"
+										}`}>
+										<th
+											scope="row"
+											className={`px-6 py-4 font-medium ${
+												isDarkMode ? "text-white" : "text-gray-900"
+											} whitespace-nowrap`}>
+											{index + 1}
+										</th>
+										<td className="px-6 py-4 font-inter">{user.name}</td>
+										<td className="px-6 py-4 font-inter">{user.email}</td>
+										<td className="py-4 font-inter">
+											<div className="flex gap-6">
+												{user.role === "admin" ? (
+													<span className="text-blue-700 font-inter font-medium">
+														Admin
+													</span>
+												) : (
+													<button
+														onClick={() => handleMakeAdmin(user)}
+														className="btn-role">
+														Make Admin
+													</button>
+												)}
+											</div>
+										</td>
+										<td className="py-4 font-inter">
+											<div className="flex gap-6">
+												{user.role === "instructor" ? (
+													<span className="text-[#f08e00] font-inter font-medium">
+														Instructor
+													</span>
+												) : (
+													<button
+														onClick={() => handleMakeInstructor(user)}
+														className="btn-ins">
+														Make Instructor
+													</button>
+												)}
+											</div>
+										</td>
+									</tr>
+								))}
 						</tbody>
 					</table>
 				</div>

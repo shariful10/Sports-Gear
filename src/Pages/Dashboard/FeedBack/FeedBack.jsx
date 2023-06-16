@@ -4,8 +4,12 @@ import SectionTitle from "../../../Components/SectionTitle";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { useLocation } from "react-router-dom";
 
 const FeedBack = () => {
+	const { state } = useLocation();
+	const [axiosSecure] = useAxiosSecure();
 	const {
 		reset,
 		register,
@@ -14,8 +18,22 @@ const FeedBack = () => {
 	} = useForm();
 
 	const onSubmit = async (data) => {
-		console.log(data);
+		const res = await axiosSecure.patch(`/classes/admin/feedback/${state}`, {
+			feedback: data.feedback,
+		});
+		console.log(res.data);
+		if (res.data?.modifiedCount) {
+			Swal.fire({
+				position: "top-center",
+				icon: "success",
+				title: "Feedback Done Successfully",
+				showConfirmButton: false,
+				timer: 1500,
+			});
+		}
 	};
+
+	console.log(state);
 
 	return (
 		<div className="w-full">
