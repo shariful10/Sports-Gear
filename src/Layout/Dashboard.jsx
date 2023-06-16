@@ -3,6 +3,8 @@ import { NavLink, Outlet } from "react-router-dom";
 import useTheme from "../Hooks/useTheme";
 import useAdmin from "../Hooks/useAdmin";
 import useInstructor from "../Hooks/useInstructor";
+import { GiClassicalKnowledge } from "react-icons/gi";
+import { MdClass } from "react-icons/md";
 
 const Dashboard = () => {
 	const { isDarkMode } = useTheme();
@@ -41,10 +43,14 @@ const Dashboard = () => {
 					) : isInstructor ? (
 						<>
 							<li>
-								<NavLink to="/dashboard/addclass">ADD A CLASS</NavLink>
+								<NavLink to="/dashboard/addclass">
+									<GiClassicalKnowledge /> ADD A CLASS
+								</NavLink>
 							</li>
 							<li>
-								<NavLink to="/dashboard/myclasses">MY CLASSES</NavLink>
+								<NavLink to="/dashboard/myclasses">
+									<MdClass /> MY CLASSES
+								</NavLink>
 							</li>
 						</>
 					) : (
