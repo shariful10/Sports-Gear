@@ -104,7 +104,7 @@ const ManageClasses = () => {
 			<SectionTitle heading={"Manage Classes"} />
 			<div className="my-container">
 				<h2
-					className={`text-[50px] font-cinzel font-bold text-center ${
+					className={`text-[40px] font-cinzel font-bold text-center ${
 						isDarkMode ? "text-white" : ""
 					}`}>
 					Total Classes: {total}

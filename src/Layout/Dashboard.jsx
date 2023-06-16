@@ -9,12 +9,6 @@ const Dashboard = () => {
 	const [isAdmin] = useAdmin();
 	const [isInstructor] = useInstructor();
 	console.log(isAdmin, isInstructor);
-	// console.log(isAdmin);
-	// console.log(isInstructor);
-	// const isAdmin = true;
-	// const isInstructor = false;
-	// const isInstructor = true;
-	// const isAdmin = false;
 
 	return (
 		<div className={`drawer lg:drawer-open ${isDarkMode ? "bg-[#201f1f]" : ""}`}>
@@ -27,6 +21,13 @@ const Dashboard = () => {
 			</div>
 			<div className="drawer-side bg-blue-700">
 				<label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+				<h2 className="text-xl text-white text-center font-cinzel font-bold mt-5">
+					{isAdmin
+						? "Admin Dashboard"
+						: isInstructor
+						? "Instructor Dashboard"
+						: "Student Dashboard"}
+				</h2>
 				<ul className="menu p-4 w-80">
 					{isAdmin ? (
 						<>

@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../../Components/SectionTitle";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useLocation } from "react-router-dom";
 
@@ -30,6 +29,7 @@ const FeedBack = () => {
 				showConfirmButton: false,
 				timer: 1500,
 			});
+			reset();
 		}
 	};
 

@@ -5,7 +5,6 @@ import { useQuery } from "@tanstack/react-query";
 import useTheme from "../../../Hooks/useTheme";
 import Swal from "sweetalert2";
 import useAxiosSecure from "./../../../Hooks/useAxiosSecure";
-import axios from "axios";
 
 const ManageUsers = () => {
 	const { isDarkMode } = useTheme();
