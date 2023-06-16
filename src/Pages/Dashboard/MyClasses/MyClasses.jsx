@@ -7,8 +7,8 @@ import useTheme from "../../../Hooks/useTheme";
 const MyClasses = () => {
 	const { isDarkMode } = useTheme();
 
-	const { data: classes = [], refetch } = useQuery(["classes"], async () => {
-		const res = await fetch("http://localhost:5000/classes");
+	const { data: classes = [] } = useQuery(["classes"], async () => {
+		const res = await fetch("https://sports-gear-server.vercel.app/classes");
 		return res.json();
 	});
 
@@ -22,7 +22,7 @@ const MyClasses = () => {
 				<title>Sports Gear | My Classes</title>
 			</Helmet>
 			<SectionTitle heading={"My Classes"} />
-			<div className="relative overflow-x-auto my-8 my-container md:px-20">
+			<div className="relative overflow-x-auto my-8 my-container md:px-16">
 				<table className="w-full text-sm text-left text-gray-500">
 					<thead className="text-xs text-white uppercase bg-blue-600">
 						<tr>
@@ -74,7 +74,9 @@ const MyClasses = () => {
 								<td className="px-8 py-4 font-inter">
 									{item?.enrolled ? item?.enrolled : 0}
 								</td>
-								<td className="px-8 py-4 font-inter">{item.status}</td>
+								<td className="px-8 py-4 font-inter font-bold text-green-500">
+									{item.status}
+								</td>
 								<td className="px-8 py-4 font-inter"></td>
 								<td className="px-8 py-4 font-inter">
 									<button className="btn-role">Update</button>
@@ -102,7 +104,9 @@ const MyClasses = () => {
 								<td className="px-8 py-4 font-inter">
 									{item?.enrolled ? item?.enrolled : 0}
 								</td>
-								<td className="px-8 py-4 font-inter">{item.status}</td>
+								<td className="px-8 py-4 font-inter font-bold text-red-600">
+									{item.status}
+								</td>
 								<td className="px-8 py-4 font-inter">{item.feedback}</td>
 								<td className="px-8 py-4 font-inter">
 									<button className="btn-role">Update</button>
@@ -130,7 +134,9 @@ const MyClasses = () => {
 								<td className="px-8 py-4 font-inter">
 									{item?.enrolled ? item?.enrolled : 0}
 								</td>
-								<td className="px-8 py-4 font-inter">{item.status}</td>
+								<td className="px-8 py-4 font-inter font-bold text-blue-600">
+									{item.status}
+								</td>
 								<td className="px-8 py-4 font-inter"></td>
 								<td className="px-8 py-4 font-inter">
 									<button className="btn-role">Update</button>

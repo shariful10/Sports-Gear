@@ -30,7 +30,7 @@ const AddClass = () => {
 			status,
 		};
 		console.log(newItem);
-		fetch("http://localhost:5000/classes", {
+		fetch("https://sports-gear-server.vercel.app/classes", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

@@ -11,7 +11,7 @@ const ManageClasses = () => {
 	const navigate = useNavigate();
 
 	const { data: classes = [], refetch } = useQuery(["classes"], async () => {
-		const res = await fetch("http://localhost:5000/classes");
+		const res = await fetch("https://sports-gear-server.vercel.app/classes");
 		return res.json();
 	});
 
@@ -20,7 +20,7 @@ const ManageClasses = () => {
 	const deniedStatus = classes.filter((item) => item.status === "Denied");
 
 	const handleMakePending = (item) => {
-		fetch(`http://localhost:5000/classes/admin/status/${item._id}`, {
+		fetch(`https://sports-gear-server.vercel.app/classes/admin/status/${item._id}`, {
 			method: "PATCH",
 			headers: {
 				"Content-Type": "application/json",
@@ -44,7 +44,7 @@ const ManageClasses = () => {
 	};
 
 	const handleMakeApproved = (item) => {
-		fetch(`http://localhost:5000/classes/admin/status/${item._id}`, {
+		fetch(`https://sports-gear-server.vercel.app/classes/admin/status/${item._id}`, {
 			method: "PATCH",
 			headers: {
 				"Content-Type": "application/json",
@@ -68,7 +68,7 @@ const ManageClasses = () => {
 	};
 
 	const handleMakeDenied = (item) => {
-		fetch(`http://localhost:5000/classes/admin/status/${item._id}`, {
+		fetch(`https://sports-gear-server.vercel.app/classes/admin/status/${item._id}`, {
 			method: "PATCH",
 			headers: {
 				"Content-Type": "application/json",
@@ -109,7 +109,7 @@ const ManageClasses = () => {
 					}`}>
 					Total Classes: {total}
 				</h2>
-				<div className="relative overflow-x-auto my-8 my-container">
+				<div className="relative overflow-x-auto my-8 my-container md:px-28">
 					<table className="w-full text-sm text-left text-gray-500">
 						<thead className="text-xs text-white uppercase bg-blue-600">
 							<tr>

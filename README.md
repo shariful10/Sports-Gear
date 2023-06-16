@@ -1,6 +1,7 @@
 ![Screenshots](https://i.ibb.co/BKfVTmQ/sportsgear.png)
 
-### Live Preview:
+### Site Name: Sports Gear
+### Live Preview: https://sports-gear-client.web.app 
 ### Website Features:
 * First Create Header and Footer
 * Then Create Login & Sign Up Pages

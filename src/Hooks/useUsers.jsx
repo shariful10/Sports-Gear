@@ -5,7 +5,7 @@ const useUsers = () => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		fetch("http://localhost:5000/users")
+		fetch("https://sports-gear-server.vercel.app/users")
 			.then((res) => res.json())
 			.then((data) => {
 				setusers(data);

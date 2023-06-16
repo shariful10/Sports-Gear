@@ -5,6 +5,8 @@ import useAdmin from "../Hooks/useAdmin";
 import useInstructor from "../Hooks/useInstructor";
 import { GiClassicalKnowledge } from "react-icons/gi";
 import { MdClass } from "react-icons/md";
+import { FaHome, FaUserShield, FaUsers } from "react-icons/fa";
+import { SiGoogleclassroom } from "react-icons/si";
 
 const Dashboard = () => {
 	const { isDarkMode } = useTheme();
@@ -23,43 +25,53 @@ const Dashboard = () => {
 			</div>
 			<div className="drawer-side bg-blue-700">
 				<label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-				<h2 className="text-xl text-white text-center font-cinzel font-bold mt-5">
-					{isAdmin
-						? "Admin Dashboard"
-						: isInstructor
-						? "Instructor Dashboard"
-						: "Student Dashboard"}
-				</h2>
 				<ul className="menu p-4 w-80">
+					<h2 className="text-xl text-[#ff9a01] text-center font-cinzel font-bold my-5">
+						{isAdmin
+							? "Admin Dashboard"
+							: isInstructor
+							? "Instructor Dashboard"
+							: "Student Dashboard"}
+					</h2>
 					{isAdmin ? (
 						<>
 							<li>
-								<NavLink to="/dashboard/classes">MANAGE CLASSES</NavLink>
+								<NavLink to="/dashboard/classes">
+									<MdClass className="h-6 w-6" /> MANAGE CLASSES
+								</NavLink>
 							</li>
 							<li>
-								<NavLink to="/dashboard/users">MANAGE USERS</NavLink>
+								<NavLink to="/dashboard/users">
+									<FaUsers className="h-6 w-6" /> MANAGE USERS
+								</NavLink>
 							</li>
 						</>
 					) : isInstructor ? (
 						<>
 							<li>
 								<NavLink to="/dashboard/addclass">
-									<GiClassicalKnowledge /> ADD A CLASS
+									<GiClassicalKnowledge className="h-6 w-6" /> ADD A CLASS
 								</NavLink>
 							</li>
 							<li>
 								<NavLink to="/dashboard/myclasses">
-									<MdClass /> MY CLASSES
+									<MdClass className="h-6 w-6" /> MY CLASSES
 								</NavLink>
 							</li>
 						</>
 					) : (
 						<>
 							<li>
-								<NavLink to="/dashboard/selected">MY SELECTED CLASSES</NavLink>
+								<NavLink to="/dashboard/selected">
+									<MdClass className="h-6 w-6" />
+									MY SELECTED CLASSES
+								</NavLink>
 							</li>
 							<li>
-								<NavLink to="/dashboard/enrolled">MY ENROLLED CLASSES</NavLink>
+								<NavLink to="/dashboard/enrolled">
+									<GiClassicalKnowledge className="h-6 w-6" />
+									MY ENROLLED CLASSES
+								</NavLink>
 							</li>
 							<li>
 								<NavLink to="/dashboard/payment">PAYMENT</NavLink>
@@ -80,13 +92,21 @@ const Dashboard = () => {
 						<hr />
 					</div>
 					<li>
-						<NavLink to="/">HOME</NavLink>
+						<NavLink to="/">
+							<FaHome className="h-6 w-6" />
+							HOME
+						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/classes">CLASSES</NavLink>
+						<NavLink to="/classes">
+							<SiGoogleclassroom className="h-6 w-6" />
+							CLASSES
+						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/instructor">INSTRUCTOR</NavLink>
+						<NavLink to="/instructor">
+							<FaUserShield className="h-6 w-6" /> INSTRUCTOR
+						</NavLink>
 					</li>
 				</ul>
 			</div>

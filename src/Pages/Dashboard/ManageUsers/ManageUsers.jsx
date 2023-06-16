@@ -11,7 +11,7 @@ const ManageUsers = () => {
 	const [axiosSecure] = useAxiosSecure();
 
 	const { data: users = [], refetch } = useQuery(["users"], async () => {
-		const res = await fetch("http://localhost:5000/users");
+		const res = await fetch("https://sports-gear-server.vercel.app/users");
 		return res.json();
 	});
 
@@ -58,13 +58,13 @@ const ManageUsers = () => {
 			<SectionTitle heading={"Manage Users"} />
 			<div className="my-container">
 				<h2
-					className={`text-[50px] font-cinzel font-bold text-center ${
+					className={`text-4xl font-cinzel font-bold text-center ${
 						isDarkMode ? "text-white" : ""
 					}`}>
 					Total Users: {users.length}
 				</h2>
 
-				<div className="relative overflow-x-auto md:px-96 mt-5">
+				<div className="relative overflow-x-auto md:px-96 my-10">
 					<table className="w-full text-sm text-left text-gray-500">
 						<thead className="text-xs text-white uppercase bg-blue-600">
 							<tr>

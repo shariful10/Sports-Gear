@@ -17,7 +17,7 @@ const SocialLogin = () => {
 			.then((res) => {
 				const loggedInUser = res.user;
 				const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email };
-				fetch("http://localhost:5000/users", {
+				fetch("https://sports-gear-server.vercel.app/users", {
 					method: "POST",
 					headers: {
 						"content-type": "application/json",
