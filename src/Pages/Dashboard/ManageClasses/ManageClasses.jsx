@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../../Components/SectionTitle";
 import useTheme from "../../../Hooks/useTheme";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useQuery } from "@tanstack/react-query";
 
@@ -94,6 +94,8 @@ const ManageClasses = () => {
 			});
 	};
 
+	const total = pendingStatus.length + approvedStatus.length + deniedStatus.length;
+
 	return (
 		<div className="w-full">
 			<Helmet>
@@ -105,9 +107,9 @@ const ManageClasses = () => {
 					className={`text-[50px] font-cinzel font-bold text-center ${
 						isDarkMode ? "text-white" : ""
 					}`}>
-					Total Classes: {classes.length}
+					Total Classes: {total}
 				</h2>
-				<div className="relative overflow-x-auto mt-5 my-container">
+				<div className="relative overflow-x-auto my-8 my-container">
 					<table className="w-full text-sm text-left text-gray-500">
 						<thead className="text-xs text-white uppercase bg-blue-600">
 							<tr>
