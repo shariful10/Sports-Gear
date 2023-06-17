@@ -74,11 +74,11 @@ const Dashboard = () => {
 								</NavLink>
 							</li>
 							{/* <li>
-								<NavLink to="/dashboard/payment"><FaWallet className="h-6 w-6" />PAYMENT</NavLink>
+								<NavLink to="/dashboard/history">
+									<GiWallet className="h-6 w-6" />
+									PAYMENT HISTORY
+								</NavLink>
 							</li> */}
-							<li>
-								<NavLink to="/dashboard/history"><GiWallet className="h-6 w-6" />PAYMENT HISTORY</NavLink>
-							</li>
 						</>
 					)}
 
