@@ -5,9 +5,8 @@ import useAdmin from "../Hooks/useAdmin";
 import useInstructor from "../Hooks/useInstructor";
 import { GiClassicalKnowledge } from "react-icons/gi";
 import { MdClass } from "react-icons/md";
-import { FaHome, FaUserShield, FaUsers, FaWallet } from "react-icons/fa";
+import { FaHome, FaUserShield, FaUsers } from "react-icons/fa";
 import { SiGoogleclassroom } from "react-icons/si";
-import { GiWallet } from "react-icons/gi";
 
 const Dashboard = () => {
 	const { isDarkMode } = useTheme();

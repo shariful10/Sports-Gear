@@ -129,7 +129,9 @@ const NavBar = () => {
 				</NavLink>
 			</li>
 			{user ? (
-				<button className="text-[16px] tracking-wide text-[#F08E00] transition-colors duration-200 hover:text-blue-500 font-inter font-semibold">
+				<button
+					onClick={handleLogout}
+					className="text-[16px] tracking-wide text-[#F08E00] transition-colors duration-200 hover:text-blue-500 font-inter font-semibold">
 					Log Out
 				</button>
 			) : (

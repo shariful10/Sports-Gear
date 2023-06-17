@@ -3,6 +3,8 @@ import useTheme from "../../Hooks/useTheme";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
+import useInstructor from "../../Hooks/useInstructor";
+import useAdmin from "../../Hooks/useAdmin";
 
 const ClassesCard = ({ singleClass }) => {
 	const { user } = useAuth();
@@ -10,6 +12,10 @@ const ClassesCard = ({ singleClass }) => {
 	const { isDarkMode } = useTheme();
 	const navigate = useNavigate();
 	const location = useLocation();
+	const [isAdmin] = useAdmin();
+	const [isInstructor] = useInstructor();
+
+	const disableSelectButton = isAdmin && isInstructor;
 
 	const handleSelect = (singleClass) => {
 		console.log(singleClass);
@@ -78,6 +84,8 @@ const ClassesCard = ({ singleClass }) => {
 						title={`${seats === 0 ? "Seat Not Available" : ""}`}
 						className={`${
 							seats === 0
+								? "disabled bg-gray-400 text-xl text-white font-inter font-medium py-4 px-5 rounded-lg cursor-not-allowed"
+								: disableSelectButton
 								? "disabled bg-gray-400 text-xl text-white font-inter font-medium py-4 px-5 rounded-lg cursor-not-allowed"
 								: "text-xl text-white bg-[#F08E00] hover:bg-blue-700 font-inter font-medium py-4 px-5 rounded-lg"
 						}`}>
