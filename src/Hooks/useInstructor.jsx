@@ -10,10 +10,7 @@ const useInstructor = () => {
 		queryKey: ["isInstructor", user?.email],
 		enabled: !loading && !!user?.email && !!localStorage.getItem("access-token"),
 		queryFn: async () => {
-			console.log(localStorage.getItem("access-token"));
 			const res = await axiosSecure.get(`/users/instructor/${user?.email}`);
-			// console.log("is admin response", res);
-			console.log(res.data);
 			return res.data.instructor;
 		},
 	});

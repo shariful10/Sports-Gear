@@ -5,14 +5,14 @@ import useAdmin from "../Hooks/useAdmin";
 import useInstructor from "../Hooks/useInstructor";
 import { GiClassicalKnowledge } from "react-icons/gi";
 import { MdClass } from "react-icons/md";
-import { FaHome, FaUserShield, FaUsers } from "react-icons/fa";
+import { FaHome, FaUserShield, FaUsers, FaWallet } from "react-icons/fa";
 import { SiGoogleclassroom } from "react-icons/si";
+import { GiWallet } from "react-icons/gi";
 
 const Dashboard = () => {
 	const { isDarkMode } = useTheme();
 	const [isAdmin] = useAdmin();
 	const [isInstructor] = useInstructor();
-	console.log(isAdmin, isInstructor);
 
 	return (
 		<div className={`drawer lg:drawer-open ${isDarkMode ? "bg-[#201f1f]" : ""}`}>
@@ -74,10 +74,10 @@ const Dashboard = () => {
 								</NavLink>
 							</li>
 							<li>
-								<NavLink to="/dashboard/payment">PAYMENT</NavLink>
+								<NavLink to="/dashboard/payment"><FaWallet className="h-6 w-6" />PAYMENT</NavLink>
 							</li>
 							<li>
-								<NavLink to="/dashboard/history">PAYMENT HISTORY</NavLink>
+								<NavLink to="/dashboard/history"><GiWallet className="h-6 w-6" />PAYMENT HISTORY</NavLink>
 							</li>
 						</>
 					)}

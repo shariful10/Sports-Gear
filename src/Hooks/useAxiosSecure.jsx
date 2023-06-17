@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const axiosSecure = axios.create({
-	baseURL: "https://sports-gear-server.vercel.app",
+	baseURL: "https://sports-gear-server-shariful10.vercel.app",
 });
 
 const useAxiosSecure = () => {

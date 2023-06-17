@@ -29,7 +29,6 @@ const AdminRoute = ({ children }) => {
 					</svg>
 					<span className="sr-only">Loading...</span>
 				</div>
-				;
 			</div>
 		);
 	}

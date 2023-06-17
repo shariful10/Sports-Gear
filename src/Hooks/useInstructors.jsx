@@ -5,7 +5,7 @@ const useInstructors = () => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		fetch("https://sports-gear-server.vercel.app/instructors")
+		fetch("https://sports-gear-server-shariful10.vercel.app/instructors")
 			.then((res) => res.json())
 			.then((data) => {
 				setInstructors(data);

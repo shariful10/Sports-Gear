@@ -5,7 +5,7 @@ const useClasses = () => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		fetch("https://sports-gear-server.vercel.app/classes")
+		fetch("https://sports-gear-server-shariful10.vercel.app/classes")
 			.then((res) => res.json())
 			.then((data) => {
 				setClasses(data);

@@ -10,7 +10,6 @@ const useAdmin = () => {
 		queryKey: ["isAdmin", user?.email],
 		enabled: !loading && !!user && !!localStorage.getItem("access-token"),
 		queryFn: async () => {
-			console.log(localStorage.getItem("access-token"));
 			if (!user || !token) {
 				return false;
 			}

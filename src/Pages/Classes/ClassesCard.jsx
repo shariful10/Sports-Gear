@@ -1,12 +1,58 @@
 import React from "react";
 import useTheme from "../../Hooks/useTheme";
+import useAuth from "../../Hooks/useAuth";
+import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const ClassesCard = ({ singleClass }) => {
+	const { user } = useAuth();
 	const { _id, image, name, price, ins_name, seats } = singleClass;
 	const { isDarkMode } = useTheme();
+	const navigate = useNavigate();
+	const location = useLocation();
 
-	const handleSelect = (item) => {
-		console.log(item);
+	const handleSelect = (singleClass) => {
+		console.log(singleClass);
+		if (user && user.email) {
+			const classItem = {
+				classId: _id,
+				name,
+				image,
+				price,
+				ins_name,
+				seats,
+				email: user.email,
+			};
+			fetch("https://sports-gear-server-shariful10.vercel.app/carts", {
+				method: "POST",
+				headers: {
+					"content-type": "application/json",
+				},
+				body: JSON.stringify(classItem),
+			})
+				.then((res) => res.json())
+				.then((data) => {
+					if (data.insertedId) {
+						// refetch();
+						Swal.fire({
+							position: "top-center",
+							icon: "success",
+							title: "Selected Class Successfully",
+							showConfirmButton: false,
+							timer: 1500,
+						});
+					}
+				});
+		} else {
+			Swal.fire({
+				position: "top-center",
+				icon: "error",
+				title: "You Have to login first",
+				showConfirmButton: false,
+				timer: 1500,
+			});
+			navigate("/login", { state: { from: location } });
+		}
 	};
 
 	return (

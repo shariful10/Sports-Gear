@@ -15,10 +15,6 @@ const NavBar = () => {
 	const { isDarkMode, handleDarkMode } = useTheme();
 	const [isAdmin] = useAdmin();
 	const [isInstructor] = useInstructor();
-	// const isAdmin = true;
-	// const isInstructor = false;
-	// const isInstructor = true;
-	// const isAdmin = false;
 
 	const handleLogout = () => {
 		logOut()

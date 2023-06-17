@@ -29,7 +29,6 @@ const InstructorRoute = ({ children }) => {
 					</svg>
 					<span className="sr-only">Loading...</span>
 				</div>
-				;
 			</div>
 		);
 	}

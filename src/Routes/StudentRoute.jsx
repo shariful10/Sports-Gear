@@ -7,10 +7,10 @@ import useInstructor from "../Hooks/useInstructor";
 const StudentRoute = ({ children }) => {
 	const { user, loading } = useAuth();
 	const location = useLocation();
-    const [isAdmin] = useAdmin();
-	const [isInstructor, isInstructorLoading] = useInstructor();
+	const [isAdmin] = useAdmin();
+	const [isInstructor] = useInstructor();
 
-	if (loading || isInstructorLoading) {
+	if (loading) {
 		return (
 			<div className="pt-40">
 				<div role="status">
@@ -31,7 +31,6 @@ const StudentRoute = ({ children }) => {
 					</svg>
 					<span className="sr-only">Loading...</span>
 				</div>
-				;
 			</div>
 		);
 	}
