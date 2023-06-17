@@ -3,11 +3,41 @@ import SectionTitle from "../../../Components/SectionTitle";
 import { Helmet } from "react-helmet-async";
 import useCart from "../../../Hooks/useCart";
 import useTheme from "../../../Hooks/useTheme";
+import Swal from "sweetalert2";
 
 const MySelectedClasses = () => {
 	const { isDarkMode } = useTheme();
-	const [carts] = useCart();
+	const [carts, refetch] = useCart();
 	console.log(carts);
+
+	const handleDelete = (select) => {
+		// console.log(item);
+		Swal.fire({
+			title: "Are you sure?",
+			text: "You won't be able to revert this!",
+			icon: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "#3085d6",
+			cancelButtonColor: "#d33",
+			confirmButtonText: "Yes, delete it!",
+		}).then((result) => {
+			if (result.isConfirmed) {
+				fetch(`https://sports-gear-server-shariful10.vercel.app/carts/${select._id}`, {
+					method: "DELETE",
+				})
+					.then((res) => res.json())
+					.then((data) => {
+						// console.log(data);
+						refetch();
+						if (data.deletedCount === 1) {
+							Swal.fire("Deleted!", "Your file has been deleted.", "success");
+							// const remaining = selected.filter((p) => p._id !== _id);
+							// setSelected(remaining);
+						}
+					});
+			}
+		});
+	};
 
 	return (
 		<div className="w-full">
@@ -29,7 +59,7 @@ const MySelectedClasses = () => {
 								Class Name
 							</th>
 							<th scope="col" className="px-8 py-3 font-inter">
-								Email
+								Student Email
 							</th>
 							<th scope="col" className="px-8 py-3 font-inter">
 								Price
@@ -65,18 +95,28 @@ const MySelectedClasses = () => {
 								</td>
 								<td className="px-6 py-4 font-inter">{select.name}</td>
 								<td className="px-6 py-4 font-inter">{select.email}</td>
-								<td className="px-6 py-4 font-inter">${select.price}</td>
+								<td className="px-6 py-4 font-inter text-blue-500 font-bold">
+									${select.price}
+								</td>
 								<td className="px-6 py-4 font-inter">{select.seats}</td>
 								<td className="py-4 font-inter">
-									<div className="flex gap-6">
-										{select.role === "instructor" ? (
-											<span className="text-[#f08e00] font-inter font-medium">
-												Instructor
-											</span>
-										) : (
-											<button className="btn-ins">Delete</button>
-										)}
-									</div>
+									<button
+										onClick={() => handleDelete(select)}
+										className="btn btn-square btn-outline text-red-700 hover:bg-red-700 hover:border-red-700">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											className="h-6 w-6"
+											fill="#FF0000"
+											viewBox="0 0 24 24"
+											stroke="currentColor">
+											<path
+												strokeLinecap="round"
+												strokeLinejoin="round"
+												strokeWidth="2"
+												d="M6 18L18 6M6 6l12 12"
+											/>
+										</svg>
+									</button>
 								</td>
 							</tr>
 						))}
