@@ -11,7 +11,6 @@ const MySelectedClasses = () => {
 	console.log(carts);
 
 	const handleDelete = (select) => {
-		// console.log(item);
 		Swal.fire({
 			title: "Are you sure?",
 			text: "You won't be able to revert this!",
@@ -27,12 +26,9 @@ const MySelectedClasses = () => {
 				})
 					.then((res) => res.json())
 					.then((data) => {
-						// console.log(data);
 						refetch();
 						if (data.deletedCount === 1) {
 							Swal.fire("Deleted!", "Your file has been deleted.", "success");
-							// const remaining = selected.filter((p) => p._id !== _id);
-							// setSelected(remaining);
 						}
 					});
 			}
@@ -66,6 +62,9 @@ const MySelectedClasses = () => {
 							</th>
 							<th scope="col" className="px-8 py-3 font-inter">
 								Available Seats
+							</th>
+							<th scope="col" className="px-8 py-3 font-inter">
+								Action
 							</th>
 							<th scope="col" className="px-8 py-3 font-inter">
 								Action
@@ -116,6 +115,13 @@ const MySelectedClasses = () => {
 												d="M6 18L18 6M6 6l12 12"
 											/>
 										</svg>
+									</button>
+								</td>
+								<td className="py-4 font-inter">
+									<button
+										onClick={() => handleDelete(select)}
+										className="btn btn-outline bg-blue-700 hover:bg-blue-500 hover:border-blue-500 text-white">
+										Pay Now
 									</button>
 								</td>
 							</tr>

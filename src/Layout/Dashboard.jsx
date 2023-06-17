@@ -73,9 +73,9 @@ const Dashboard = () => {
 									MY ENROLLED CLASSES
 								</NavLink>
 							</li>
-							<li>
+							{/* <li>
 								<NavLink to="/dashboard/payment"><FaWallet className="h-6 w-6" />PAYMENT</NavLink>
-							</li>
+							</li> */}
 							<li>
 								<NavLink to="/dashboard/history"><GiWallet className="h-6 w-6" />PAYMENT HISTORY</NavLink>
 							</li>

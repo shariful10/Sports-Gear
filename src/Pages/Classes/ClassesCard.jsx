@@ -33,7 +33,6 @@ const ClassesCard = ({ singleClass }) => {
 				.then((res) => res.json())
 				.then((data) => {
 					if (data.insertedId) {
-						// refetch();
 						Swal.fire({
 							position: "top-center",
 							icon: "success",
